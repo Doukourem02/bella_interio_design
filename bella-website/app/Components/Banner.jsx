@@ -19,7 +19,7 @@ const Banner = () => {
                   className="w-full h-full object-cover"
                 >
                   <source src="/assets/banner video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
+                  Votre navigateur ne prend pas en charge la vidéo.
                 </video>
                 {/* Play button overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -47,7 +47,7 @@ const Banner = () => {
                   className="w-full h-full object-cover"
                 >
                   <source src="/assets/banner video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
+                  Votre navigateur ne prend pas en charge la vidéo.
                 </video>
                 {/* Play button overlay for mobile */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -68,7 +68,7 @@ const Banner = () => {
               <div className="grid grid-cols-1 items-center justify-items-center text-white">
                 <div className="space-y-3 md:space-y-4 lg:space-y-5 xl:space-y-6 2xl:space-y-8 -mt-8 sm:-mt-16 md:-mt-24 lg:-mt-32 xl:-mt-40 2xl:-mt-48 text-center lg:text-left max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
                   <h2 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-3xl flex flex-col lg:flex-row items-center gap-2 lg:gap-3 xl:gap-4 2xl:gap-6 uppercase tracking-[1px] sm:tracking-[2px] md:tracking-[3px] lg:tracking-[4px] xl:tracking-[5px] 2xl:tracking-[6px]">
-                    Exclusive Furniture
+                    Décoration d&apos;intérieur & apprentissage
                     <img
                       src="/assets/line.png"
                       alt="line"
@@ -76,11 +76,11 @@ const Banner = () => {
                     />
                   </h2>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[12rem] leading-tight font-bold">
-                    COMFORT
+                    BELLA
                   </h1>
                   <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto lg:mx-0 px-2 sm:px-4 lg:px-0">
-                    Explore a wide range of high-quality furniture classic
-                    styles furniture world.
+                    Bella création imagination vous accompagne pour transformer
+                    vos espaces avec conseil couleur, agencement et sens du détail.
                   </p>
                 </div>
                 {/* <Button></Button> */}

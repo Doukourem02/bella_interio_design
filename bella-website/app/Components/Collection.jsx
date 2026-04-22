@@ -8,113 +8,115 @@ const Collection = () => {
   const ProductsCollection = [
     {
       id: 1,
-      name: "Luxury Office Chair",
+      name: "Décoration d'intérieur",
       price: 299.99,
       originalPrice: 399.99,
       image: "/assets/collections/chair.jpg",
       colors: [
-        { name: "Midnight Black", color: "#1a1a1a" },
-        { name: "Charcoal Gray", color: "#4a4a4a" },
-        { name: "Ocean Blue", color: "#2563eb" },
-        { name: "Forest Green", color: "#059669" },
+        { name: "Bleu profond", color: "#1a1a1a" },
+        { name: "Gris doux", color: "#4a4a4a" },
+        { name: "Bleu lumière", color: "#2563eb" },
+        { name: "Vert naturel", color: "#059669" },
       ],
       rating: 4.8,
-      badge: "Best Sale",
-      category: "Chairs",
+      badge: "Service",
+      category: "Décoration",
     },
     {
       id: 2,
-      name: "Modern Dining Chair",
+      name: "Conseil couleurs",
       price: 159.99,
       originalPrice: 199.99,
       image: "/assets/collections/chair2.jpg",
       colors: [
-        { name: "Pure White", color: "#ffffff" },
-        { name: "Warm Beige", color: "#f5f5dc" },
-        { name: "Soft Gray", color: "#d1d5db" },
+        { name: "Blanc pur", color: "#ffffff" },
+        { name: "Beige chaud", color: "#f5f5dc" },
+        { name: "Gris clair", color: "#d1d5db" },
       ],
       rating: 4.6,
-      badge: "New",
-      category: "Chairs",
+      badge: "Nouveau",
+      category: "Couleurs",
     },
     {
       id: 3,
-      name: "Designer Table Lamp",
+      name: "Accessoires & lumières",
       price: 89.99,
       originalPrice: 129.99,
       image: "/assets/collections/lamp.jpg",
       colors: [
-        { name: "Gold Brass", color: "#d4af37" },
-        { name: "Rose Gold", color: "#e8b4a6" },
-        { name: "Silver Chrome", color: "#c0c0c0" },
-        { name: "Matte Black", color: "#2d2d2d" },
-        { name: "Copper Bronze", color: "#b87333" },
+        { name: "Laiton doré", color: "#d4af37" },
+        { name: "Rose poudré", color: "#e8b4a6" },
+        { name: "Argent lumineux", color: "#c0c0c0" },
+        { name: "Noir mat", color: "#2d2d2d" },
+        { name: "Cuivre doux", color: "#b87333" },
       ],
       rating: 4.9,
-      badge: "Hot",
-      category: "Lighting",
+      badge: "Conseil",
+      category: "Ambiance",
     },
     {
       id: 4,
-      name: "Modern Floor Lamp",
+      name: "Relooking déco",
       price: 199.99,
       originalPrice: 249.99,
       image: "/assets/collections/lamp2.jpg",
       colors: [
-        { name: "Classic Black", color: "#000000" },
-        { name: "Nordic White", color: "#fafafa" },
+        { name: "Noir classique", color: "#000000" },
+        { name: "Blanc nordique", color: "#fafafa" },
       ],
       rating: 4.7,
-      badge: "Sale",
-      category: "Lighting",
+      badge: "Sur mesure",
+      category: "Relooking",
     },
     {
       id: 5,
-      name: "Premium Sofa Set",
+      name: "Agencement intérieur",
       price: 1299.99,
       originalPrice: 1599.99,
       image: "/assets/collections/sofa.jpg",
       colors: [
-        { name: "Royal Navy", color: "#1e3a8a" },
-        { name: "Emerald Green", color: "#10b981" },
-        { name: "Burgundy Red", color: "#991b1b" },
-        { name: "Chocolate Brown", color: "#78350f" },
-        { name: "Pearl Gray", color: "#9ca3af" },
-        { name: "Cream White", color: "#fef3c7" },
+        { name: "Bleu royal", color: "#1e3a8a" },
+        { name: "Vert émeraude", color: "#10b981" },
+        { name: "Rouge profond", color: "#991b1b" },
+        { name: "Brun chaleureux", color: "#78350f" },
+        { name: "Gris perle", color: "#9ca3af" },
+        { name: "Crème doux", color: "#fef3c7" },
       ],
       rating: 4.9,
-      badge: "Popular",
-      category: "Sofas",
+      badge: "Populaire",
+      category: "Agencement",
     },
     {
       id: 6,
-      name: "Minimalist Stool",
+      name: "Acquis & apprentissage",
       price: 79.99,
       originalPrice: 99.99,
       image: "/assets/collections/stool.jpg",
       colors: [
-        { name: "Natural Wood", color: "#deb887" },
-        { name: "Ebony Black", color: "#1c1c1c" },
-        { name: "Ash Gray", color: "#6b7280" },
+        { name: "Bois naturel", color: "#deb887" },
+        { name: "Noir ébène", color: "#1c1c1c" },
+        { name: "Gris cendré", color: "#6b7280" },
       ],
       rating: 4.5,
-      badge: "New",
-      category: "Stools",
+      badge: "Atelier",
+      category: "Transmission",
     },
   ];
 
   const getBadgeColor = (badge) => {
     switch (badge) {
-      case "Best Sale":
+      case "Service":
         return "bg-red-500 text-white";
-      case "New":
+      case "Nouveau":
         return "bg-green-500 text-white";
-      case "Hot":
+      case "Conseil":
         return "bg-orange-500 text-white";
-      case "Sale":
+      case "Sur mesure":
         return "bg-blue-500 text-white";
-      case "Popular":
+      case "Populaire":
         return "bg-purple-500 text-white";
+      case "Atelier":
+        return "bg-gray-700 text-white";
       default:
         return "bg-gray-500 text-white";
     }
@@ -126,11 +128,12 @@ const Collection = () => {
         {/* Section Header */}
         <div className="text-center">
           <h2 className="text-4xl lg:text-6xl font-semibold text-gray-800 mb-4">
-            Our <span className="text-primary">Collection</span>
+            Nos <span className="text-primary">Prestations</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our carefully curated selection of premium furniture pieces
-            designed to transform your living spaces.
+            Bella création imagination accompagne les particuliers dans la
+            décoration de leurs intérieurs et dans l&apos;apprentissage de repères
+            utiles au quotidien.
           </p>
         </div>
 
@@ -166,7 +169,7 @@ const Collection = () => {
                 <div className="absolute top-4 right-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm border border-gray-200">
                     <div className="text-xs text-gray-600 mb-1 text-center">
-                      {product.colors.length} colors
+                      {product.colors.length} couleurs
                     </div>
                     <div className="flex gap-1">
                       {product.colors.slice(0, 3).map((colorItem, index) => (
@@ -225,7 +228,7 @@ const Collection = () => {
                 {/* Color Options */}
                 <div className="mb-4">
                   <p className="text-sm text-gray-700 mb-2 font-medium">
-                    Available Colors
+                    Couleurs proposées
                   </p>
                   <div className="flex gap-2">
                     {product.colors.slice(0, 5).map((colorItem, index) => (
@@ -265,7 +268,7 @@ const Collection = () => {
                 <div className="space-y-3">
                   <div className="inline-flex items-center">
                     <span className="bg-green-50 text-green-700 text-sm font-medium px-3 py-1 rounded-full border border-green-200">
-                      Save{" "}
+                      Économisez{" "}
                       {Math.round(
                         ((product.originalPrice - product.price) /
                           product.originalPrice) *
@@ -278,11 +281,11 @@ const Collection = () => {
                   <div className="flex items-center justify-between text-xs text-gray-500">
                     <span className="flex items-center gap-1">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                      Free Shipping
+                      Premier échange offert
                     </span>
                     <span className="flex items-center gap-1">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                      30-Day Return
+                      Suivi personnalisé
                     </span>
                   </div>
                 </div>
@@ -294,7 +297,7 @@ const Collection = () => {
         {/* View All Button */}
         <div className="text-center">
           <Button className="px-8 h-12 font-normal tracking-wide">
-            View All Products
+            Voir toutes les prestations
           </Button>
         </div>
       </div>

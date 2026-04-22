@@ -9,51 +9,51 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Interior Designer",
-      location: "New York, USA",
+      name: "Bella création imagination",
+      role: "Décoration intérieure",
+      location: "France & Canada",
       rating: 5,
-      text: "Absolutely stunning furniture quality! The team helped me transform my living space into a modern masterpiece. Every piece is crafted with incredible attention to detail.",
+      text: "Une pièce peut changer totalement quand les couleurs, la lumière et les objets dialoguent ensemble.",
       image:
         "https://images.unsplash.com/photo-1494790108755-2616c9b130d2?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "Homeowner",
-      location: "Los Angeles, USA",
+      name: "Conseil couleur",
+      role: "Palette et matières",
+      location: "À distance ou sur place",
       rating: 5,
-      text: "The interior design service exceeded all expectations. From consultation to final installation, everything was seamless. My home now feels like a luxury hotel!",
+      text: "La décoration devient plus simple quand chaque choix a une raison et une place dans l'ensemble.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 3,
-      name: "Emma Williams",
-      role: "Business Owner",
-      location: "London, UK",
+      name: "Agencement",
+      role: "Organisation des espaces",
+      location: "Selon le projet",
       rating: 5,
-      text: "Outstanding customer service and premium quality furniture. The delivery was prompt and the installation team was professional. Highly recommend!",
+      text: "L'objectif est aussi de transmettre des repères pour continuer à prendre soin de son intérieur.",
       image:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 4,
-      name: "David Rodriguez",
-      role: "Architect",
-      location: "Miami, USA",
+      name: "Accompagnement",
+      role: "Écoute et créativité",
+      location: "Projet personnalisé",
       rating: 5,
-      text: "I've worked with many furniture companies, but this one stands out. The design consultation was thorough and the final result was exactly what I envisioned.",
+      text: "Chaque intérieur mérite une ambiance claire, élégante et adaptée aux habitudes de ceux qui y vivent.",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 5,
-      name: "Lisa Thompson",
-      role: "Marketing Director",
-      location: "Toronto, Canada",
+      name: "Transmission",
+      role: "Acquis divers",
+      location: "Conseils réutilisables",
       rating: 5,
-      text: "Incredible transformation of our office space! The team understood our brand perfectly and created a workspace that's both functional and inspiring.",
+      text: "Les bons repères permettent de faire évoluer son intérieur avec confiance, même après l'accompagnement.",
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
     },
@@ -93,12 +93,12 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-6">
-            What Our <span className="text-primary">Clients Say</span>
+            Une expérience <span className="text-primary">douce et guidée</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our satisfied customers
-            have to say about their experience with our furniture and interior
-            design services.
+            Le site présente Bella comme une professionnelle de la décoration :
+            une approche humaine, sensible et centrée sur l&apos;harmonie de votre
+            intérieur.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ const Testimonials = () => {
 
                     {/* Testimonial Text */}
                     <blockquote className="text-xl lg:text-2xl text-gray-700 text-center leading-relaxed mb-8 font-medium">
-                      "{testimonial.text}"
+                      &ldquo;{testimonial.text}&rdquo;
                     </blockquote>
 
                     {/* Rating */}
@@ -204,15 +204,15 @@ const Testimonials = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center py-16 bg-primary/5 rounded-2xl">
             <div className="text-3xl font-bold text-gray-900 mb-2">1000 <span className="text-primary">+</span></div>
-            <div className="text-gray-600">Happy Customers</div>
+            <div className="text-gray-600">Idées déco</div>
           </div>
           <div className="text-center py-16 bg-primary/5 rounded-2xl">
             <div className="text-3xl font-bold text-gray-900 mb-2">4.9 <span className="text-primary">★</span></div>
-            <div className="text-gray-600">Average Rating</div>
+            <div className="text-gray-600">Écoute attentive</div>
           </div>
           <div className="text-center py-16 bg-primary/5 rounded-2xl">
             <div className="text-3xl font-bold text-gray-900 mb-2">98 <span className="text-primary">%</span></div>
-            <div className="text-gray-600">Customer Satisfaction</div>
+            <div className="text-gray-600">Confiance</div>
           </div>
         </div>
       </div>

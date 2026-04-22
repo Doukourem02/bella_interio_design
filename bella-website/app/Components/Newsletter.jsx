@@ -33,12 +33,12 @@ const Newsletter = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            Stay <span className="text-primary">Updated</span>
+            Parlons de votre <span className="text-primary">intérieur</span>
           </h2>
           <p className="text-lg text-gray-100 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-            Subscribe to our newsletter and get the latest furniture trends,
-            exclusive offers, and interior design tips delivered straight to
-            your inbox.
+            Pour une décoration, un conseil couleur, un projet d&apos;agencement
+            ou un accompagnement autour des acquis divers, contactez Bella
+            directement.
           </p>
         </div>
 
@@ -51,10 +51,10 @@ const Newsletter = () => {
                   <Mail className="text-green-600" size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Thank You for Subscribing!
+                  Merci pour votre message !
                 </h3>
                 <p className="text-gray-600">
-                  Check your inbox for a welcome email with exclusive offers.
+                  Bella pourra reprendre contact avec vous pour échanger sur votre projet.
                 </p>
               </div>
             ) : (
@@ -63,11 +63,11 @@ const Newsletter = () => {
                   <Mail className="text-primary" size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Get 15% Off Your First Order
+                  Contact direct avec Bella
                 </h3>
                 <p className="text-gray-600 mb-8">
-                  Join our newsletter for exclusive deals and design
-                  inspiration.
+                  Laissez votre email pour préparer un premier échange autour
+                  de votre intérieur.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -76,7 +76,7 @@ const Newsletter = () => {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email address"
+                      placeholder="Votre adresse email"
                       required
                       className="flex-1 px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 shadow-sm"
                     />
@@ -84,14 +84,14 @@ const Newsletter = () => {
                       type="submit"
                       className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                     >
-                      Subscribe
+                      Démarrer
                       <ArrowRight size={20} />
                     </Button>
                   </div>
 
                   <p className="text-sm text-gray-500 max-w-md mx-auto">
-                    No spam, unsubscribe at any time. By subscribing you agree
-                    to our Privacy Policy.
+                    Vous pouvez aussi écrire directement à britanie4@hotmail.com
+                    ou appeler Bella selon votre disponibilité.
                   </p>
                 </form>
               </div>

@@ -6,20 +6,20 @@ const Growth = () => {
     {
       number: "42",
       icon: Globe,
-      title: "Countries Worldwide",
-      description: "Delivering premium furniture across the globe with excellence and reliability."
+      title: "Analyse de votre espace",
+      description: "Comprendre les volumes, la lumière, les habitudes et les besoins avant de proposer une ambiance."
     },
     {
       number: "50K",
       icon: Users,
-      title: "Happy Customers",
-      description: "Satisfied clients who trust our quality and craftsmanship in every piece."
+      title: "Ambiances personnalisées",
+      description: "Construire une direction claire avec couleurs, matières, mobilier, objets et finitions."
     },
     {
       number: "15",
       icon: Award,
-      title: "Years of Excellence",
-      description: "Decades of expertise in creating beautiful, functional living spaces."
+      title: "Acquis transmis",
+      description: "Vous laisser des repères simples pour continuer à prendre soin de votre intérieur."
     }
   ];
 
@@ -29,11 +29,12 @@ const Growth = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-6">
-            Our <span className="text-primary">Growth</span>
+            Une décoration <span className="text-primary">pensée avec vous</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From humble beginnings to global recognition, our journey reflects our commitment 
-            to delivering exceptional furniture that transforms homes worldwide.
+            Le travail de Bella repose sur l&apos;écoute, la créativité et la
+            transmission. L&apos;objectif est de créer un intérieur agréable,
+            cohérent et facile à vivre au quotidien.
           </p>
         </div>
 
@@ -89,18 +90,19 @@ const Growth = () => {
             {/* Left Content */}
             <div className="">
               <h3 className="text-4xl font-semibold text-gray-800">
-                Building Trust Through Quality
+                Une approche humaine et progressive
               </h3>
               <p className="text-gray-600 py-8 leading-relaxed">
-                Our growth isn't just about numbers—it's about the relationships we've built 
-                and the homes we've helped create. Every piece tells a story of craftsmanship, 
-                durability, and timeless design.
+                Chaque projet commence par un échange pour comprendre vos envies,
+                vos contraintes et l&apos;usage de chaque pièce. L&apos;accompagnement
+                peut ensuite évoluer vers une ambiance, une organisation et des
+                repères clairs à réutiliser.
               </p>
               <div className="flex items-center gap-2 text-amber-500">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={20} className="fill-current" />
                 ))}
-                <span className="text-gray-700 font-semibold ml-2">4.9/5 Customer Rating</span>
+                <span className="text-gray-700 font-semibold ml-2">Accompagnement à l&apos;écoute</span>
               </div>
             </div>
 
@@ -108,19 +110,19 @@ const Growth = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-6 bg-white rounded-xl shadow-sm">
                 <div className="text-2xl font-bold text-primary mb-2">98%</div>
-                <div className="text-sm text-gray-600">Customer Satisfaction</div>
+                <div className="text-sm text-gray-600">Écoute et confiance</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-sm">
                 <div className="text-2xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-sm text-gray-600">Customer Support</div>
+                <div className="text-sm text-gray-600">Contact direct</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-sm">
                 <div className="text-2xl font-bold text-primary mb-2">1000+</div>
-                <div className="text-sm text-gray-600">Unique Designs</div>
+                <div className="text-sm text-gray-600">Idées déco</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl font-bold text-primary mb-2">Free</div>
-                <div className="text-sm text-gray-600">Global Shipping</div>
+                <div className="text-2xl font-bold text-primary mb-2">Sur mesure</div>
+                <div className="text-sm text-gray-600">Selon votre projet</div>
               </div>
             </div>
           </div>

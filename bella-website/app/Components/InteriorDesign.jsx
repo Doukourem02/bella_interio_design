@@ -8,22 +8,22 @@ const InteriorDesign = () => {
     {
       id: 1,
       src: "/assets/Interior/Interior1.jpg",
-      alt: "Modern Living Room Design",
+      alt: "Salon harmonieux en décoration intérieure",
     },
     {
       id: 2,
       src: "/assets/Interior/Interior2.jpg",
-      alt: "Contemporary Bedroom Setup",
+      alt: "Chambre contemporaine et apaisante",
     },
     {
       id: 3,
       src: "/assets/Interior/Interior3.jpg",
-      alt: "Minimalist Kitchen Design",
+      alt: "Espace intérieur lumineux",
     },
     {
       id: 4,
       src: "/assets/Interior/Interior4.jpg",
-      alt: "Elegant Dining Space",
+      alt: "Coin de vie élégant",
     },
   ];
 
@@ -33,16 +33,15 @@ const InteriorDesign = () => {
         <div className="text-center mb-16">
           <div className="mb-4">
             <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-              ✨ Interior Design Excellence
+              ✨ Décoration intérieure
             </span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-6">
-            Our Interior <span className="text-primary">Design</span>
+            Notre <span className="text-primary">accompagnement déco</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From concept to completion, we follow a structured approach to
-            deliver exceptional results that exceed your expectations every step
-            of the way.
+            De l&apos;idée de départ aux choix concrets, Bella vous aide à créer
+            un intérieur plus lisible, plus beau et plus personnel.
           </p>
         </div>
 
@@ -52,14 +51,13 @@ const InteriorDesign = () => {
             {/* Main Heading Section */}
             <div>
               <h1 className="text-2xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-6">
-                Transform Your Space Into a{" "}
-                <span className="text-primary">Dream Home</span>
+                Transformer votre espace en un{" "}
+                <span className="text-primary">intérieur qui vous ressemble</span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
-                From concept to completion, we create stunning interiors that
-                perfectly blend style, comfort, and functionality. Let our
-                expert designers bring your vision to life with personalized
-                solutions tailored to your lifestyle.
+                Bella création imagination fait le lien entre vos idées et un
+                résultat concret. L&apos;objectif est d&apos;associer couleurs,
+                matières, lumière et objets pour créer une ambiance cohérente.
               </p>
             </div>
 
@@ -71,11 +69,11 @@ const InteriorDesign = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">
-                    Personalized Design
+                    Décoration personnalisée
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Tailored solutions that reflect your unique taste and
-                    lifestyle preferences.
+                    Des propositions adaptées à votre goût, votre rythme et
+                    votre façon de vivre.
                   </p>
                 </div>
               </div>
@@ -86,11 +84,11 @@ const InteriorDesign = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">
-                    Complete Service
+                    Accompagnement complet
                   </h3>
                   <p className="text-sm text-gray-600">
-                    End-to-end solutions from planning to final installation and
-                    styling.
+                    Un suivi possible de l&apos;idée jusqu&apos;aux choix de mobilier,
+                    textiles, lumière et objets.
                   </p>
                 </div>
               </div>
@@ -101,11 +99,11 @@ const InteriorDesign = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">
-                    Premium Quality
+                    Choix cohérents
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Only the finest materials and furniture pieces for lasting
-                    beauty.
+                    Des repères pour éviter les achats dispersés et garder une
+                    harmonie durable.
                   </p>
                 </div>
               </div>
@@ -116,10 +114,11 @@ const InteriorDesign = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">
-                    Timely Delivery
+                    Contact humain
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Professional project management ensuring on-time completion.
+                    Un échange direct pour avancer simplement, sur place ou à
+                    distance selon le projet.
                   </p>
                 </div>
               </div>
@@ -127,38 +126,38 @@ const InteriorDesign = () => {
 
             {/* What We Offer */}
             <div className="bg-white border border-gray-200 rounded-2xl p-6">
-              <h3 className="font-bold text-gray-900 mb-4">What We Offer:</h3>
+              <h3 className="font-bold text-gray-900 mb-4">Ce que Bella propose :</h3>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-gray-700">Space Planning</span>
+                  <span className="text-gray-700">Agencement des espaces</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-gray-700">3D Visualization</span>
+                  <span className="text-gray-700">Direction déco</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-gray-700">Furniture Selection</span>
+                  <span className="text-gray-700">Choix du mobilier</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-gray-700">Color Consultation</span>
+                  <span className="text-gray-700">Conseil couleurs</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-gray-700">Lighting Design</span>
+                  <span className="text-gray-700">Ambiance lumière</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-gray-700">Project Management</span>
+                  <span className="text-gray-700">Acquis à réutiliser</span>
                 </div>
               </div>
             </div>
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="group bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2">
-                Schedule Consultation
+                Écrire par email
                 <ArrowRight
                   size={20}
                   className="group-hover:translate-x-1 transition-transform duration-200"
@@ -168,7 +167,7 @@ const InteriorDesign = () => {
                 variant="outline"
                 className="px-8 py-3 rounded-lg font-semibold border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-200"
               >
-                View Portfolio
+                Voir les inspirations
               </Button>
             </div>
           </div>
@@ -210,26 +209,26 @@ const InteriorDesign = () => {
             {[
               {
                 step: "01",
-                title: "Consultation",
-                desc: "Understanding your vision and requirements through detailed discussions and site analysis.",
+                title: "Écoute",
+                desc: "Comprendre vos envies, vos contraintes et l'usage de chaque espace.",
                 color: "bg-blue-50 border-blue-200 text-blue-600",
               },
               {
                 step: "02",
-                title: "Design",
-                desc: "Creating detailed plans and 3D visualizations to bring your ideas to life.",
+                title: "Direction déco",
+                desc: "Proposer une ambiance, une palette et des idées faciles à visualiser.",
                 color: "bg-green-50 border-green-200 text-green-600",
               },
               {
                 step: "03",
-                title: "Selection",
-                desc: "Choosing the perfect furniture and materials that match your style and budget.",
+                title: "Sélection",
+                desc: "Choisir les éléments importants : mobilier, textiles, lumière et finitions.",
                 color: "bg-purple-50 border-purple-200 text-purple-600",
               },
               {
                 step: "04",
-                title: "Installation",
-                desc: "Professional setup and final styling to complete your dream space transformation.",
+                title: "Transmission",
+                desc: "Vous laisser des repères clairs pour entretenir l'harmonie au quotidien.",
                 color: "bg-orange-50 border-orange-200 text-orange-600",
               },
             ].map((process, index) => (

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ShoppingBasket } from "lucide-react";
@@ -19,15 +18,14 @@ export default function Header() {
           className="flex items-center justify-between p-6 lg:px-8"
         >
           <div className="flex lg:flex-1">
-            <Link href="/" className="">
-              <span className="sr-only">Your Company</span>
-              <Image
-                src="/logo.png"
-                alt="Next.js logo"
-                width={250}
-                height={80}
-                className="w-[200px] lg:w-[250px]"
-              />
+            <Link href="/" className="leading-none text-white">
+              <span className="sr-only">Bella création imagination</span>
+              <span className="block text-2xl font-bold tracking-wide lg:text-3xl">
+                Bella
+              </span>
+              <span className="block text-[10px] font-medium uppercase tracking-[0.28em] text-white/80 lg:text-xs">
+                création imagination
+              </span>
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -36,7 +34,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(true)}
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Ouvrir le menu principal</span>
               <Bars3Icon aria-hidden="true" className="size-8 text-primary" />
             </button>
           </div>
@@ -45,21 +43,21 @@ export default function Header() {
               href="#"
               className="relative text-lg tracking-wide text-white hover:text-primary hover:scale-110 transition-all hover:duration-500 group"
             >
-              Home
+              Accueil
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500 ease-out"></span>
             </Link>
             <Link
               href="#"
               className="relative text-lg tracking-wide text-white hover:text-primary hover:scale-110 transition-all hover:duration-500 group"
             >
-              About Us
+              À propos
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500 ease-out"></span>
             </Link>
             <Link
               href="#"
               className="relative text-lg tracking-wide text-white hover:text-primary hover:scale-110 transition-all hover:duration-500 group"
             >
-              Services
+              Prestations
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500 ease-out"></span>
             </Link>
             <Link
@@ -72,7 +70,7 @@ export default function Header() {
           </PopoverGroup>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Button>
-              <ShoppingBasket size={30} /> Shop Now
+              <ShoppingBasket size={30} /> Démarrer
             </Button>
           </div>
         </nav>
@@ -85,21 +83,21 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-800 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="">
-              <span className="sr-only">Your Company</span>
-              <Image
-                src="/logo.png"
-                alt="Next.js logo"
-                width={250}
-                height={80}
-              />
+            <Link href="/" className="leading-none text-white">
+              <span className="sr-only">Bella création imagination</span>
+              <span className="block text-2xl font-bold tracking-wide">
+                Bella
+              </span>
+              <span className="block text-[10px] font-medium uppercase tracking-[0.28em] text-white/70">
+                création imagination
+              </span>
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-white"
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">Fermer le menu</span>
               <XMarkIcon aria-hidden="true" className="size-6" />
             </button>
           </div>
@@ -110,21 +108,21 @@ export default function Header() {
                   href="#"
                   className="-mx-1 relative rounded-sm block px-3 py-2 text-base/7 font-semibold text-white bg-gray-700/80 hover:bg-gray-200 hover:text-primary transition-all duration-300 group overflow-hidden"
                 >
-                  Home
+                  Accueil
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 ease-out"></span>
                 </Link>
                 <Link
                   href="#"
                   className="-mx-1 relative rounded-sm block px-3 py-2 text-base/7 font-semibold text-white bg-gray-700/80 hover:bg-gray-200 hover:text-primary transition-all duration-300 group overflow-hidden"
                 >
-                  About Us
+                  À propos
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 ease-out"></span>
                 </Link>
                 <Link
                   href="#"
                   className="-mx-1 relative rounded-sm block px-3 py-2 text-base/7 font-semibold text-white bg-gray-700/80 hover:bg-gray-200 hover:text-primary transition-all duration-300 group overflow-hidden"
                 >
-                  Services
+                  Prestations
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 ease-out"></span>
                 </Link>
                 <Link
@@ -137,7 +135,7 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <Button>
-                  <ShoppingBasket size={30} /> Shop Now
+                  <ShoppingBasket size={30} /> Démarrer
                 </Button>
               </div>
             </div>

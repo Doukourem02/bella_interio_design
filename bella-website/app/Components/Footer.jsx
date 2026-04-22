@@ -8,7 +8,6 @@ import {
   MapPin,
   Heart,
 } from "lucide-react";
-import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -16,32 +15,32 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: "About Us", href: "/about" },
-      { name: "Our Story", href: "/story" },
-      { name: "Careers", href: "/careers" },
-      { name: "Press", href: "/press" },
+      { name: "À propos", href: "#apropos" },
+      { name: "Approche", href: "#approche" },
+      { name: "Prestations", href: "#prestations" },
+      { name: "Témoignages", href: "#temoignages" },
       { name: "Contact", href: "/contact" },
     ],
     products: [
-      { name: "Living Room", href: "/living-room" },
-      { name: "Bedroom", href: "/bedroom" },
-      { name: "Dining Room", href: "/dining-room" },
-      { name: "Office", href: "/office" },
-      { name: "Outdoor", href: "/outdoor" },
+      { name: "Salon", href: "#salon" },
+      { name: "Chambre", href: "#chambre" },
+      { name: "Bureau", href: "#bureau" },
+      { name: "Espaces familiaux", href: "#espaces" },
+      { name: "Ambiance lumière", href: "#lumiere" },
     ],
     services: [
-      { name: "Interior Design", href: "/interior-design" },
-      { name: "Free Consultation", href: "/consultation" },
-      { name: "Delivery & Assembly", href: "/delivery" },
-      { name: "Financing", href: "/financing" },
-      { name: "Trade Program", href: "/trade" },
+      { name: "Décoration d'intérieur", href: "#decoration" },
+      { name: "Conseil couleurs", href: "#couleurs" },
+      { name: "Agencement", href: "#agencement" },
+      { name: "Accessoires & lumières", href: "#accessoires" },
+      { name: "Acquis divers", href: "#acquis" },
     ],
     support: [
-      { name: "Help Center", href: "/help" },
-      { name: "Shipping Info", href: "/shipping" },
-      { name: "Returns", href: "/returns" },
-      { name: "Size Guide", href: "/size-guide" },
-      { name: "Care Instructions", href: "/care" },
+      { name: "Premier échange", href: "#contact" },
+      { name: "À distance", href: "#distance" },
+      { name: "Sur place", href: "#sur-place" },
+      { name: "Conseils pratiques", href: "#conseils" },
+      { name: "Suivi projet", href: "#suivi" },
     ],
   };
 
@@ -59,41 +58,39 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <Image
-                src="/logo.png"
-                alt="Luxe Home"
-                width={250}
-                height={40}
-                // className="w-10 h-10"
-              />
+            <div className="mb-6 leading-none text-white">
+              <div className="text-3xl font-bold tracking-wide">Bella</div>
+              <div className="mt-2 text-xs font-medium uppercase tracking-[0.28em] text-white/60">
+                création imagination
+              </div>
             </div>
             <p className="text-gray-300 pb-10 leading-relaxed max-w-md ">
-              Transform your living spaces with our premium furniture
-              collection. We create beautiful, functional environments that
-              reflect your unique style.
+              Spécialisée dans la décoration de l&apos;intérieur et
+              l&apos;apprentissage des acquis divers, Bella accompagne la
+              transformation des espaces avec écoute, imagination et sens du
+              détail.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone size={18} />
-                <span>+1 (555) 123-4567</span>
+                <span>+33 6 05 53 24 20</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Mail size={18} />
-                <span>hello@luxehome.com</span>
+                <span>britanie4@hotmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <MapPin size={18} />
-                <span>123 Design Street, NY 10001</span>
+                <span>France & Canada - accompagnement à distance possible</span>
               </div>
             </div>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="text-xl font-medium mb-6">Company</h3>
+            <h3 className="text-xl font-medium mb-6">Bella</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
@@ -111,7 +108,7 @@ const Footer = () => {
 
           {/* Products Links */}
           <div>
-            <h3 className="text-xl font-medium mb-6">Products</h3>
+            <h3 className="text-xl font-medium mb-6">Espaces</h3>
             <ul className="space-y-3">
               {footerLinks.products.map((link, index) => (
                 <li key={index}>
@@ -147,7 +144,7 @@ const Footer = () => {
 
           {/* Support Links */}
           <div>
-            <h3 className="text-xl font-medium mb-6">Support</h3>
+            <h3 className="text-xl font-medium mb-6">Accompagnement</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
@@ -168,20 +165,20 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-12 mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Stay in the Loop</h3>
+              <h3 className="text-2xl font-bold mb-4">Restons en contact</h3>
               <p className="text-gray-300">
-                Subscribe to get special offers, free giveaways, and updates on
-                new arrivals.
+                Recevez des inspirations déco, des conseils couleur et des
+                idées simples pour faire évoluer votre intérieur.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Votre email"
                 className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200"
               />
               <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200">
-                Subscribe
+                S&apos;inscrire
               </button>
             </div>
           </div>
@@ -192,7 +189,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
             {/* Social Media Links */}
             <div className="flex items-center gap-4">
-              <span className="text-gray-300 mr-2">Follow us:</span>
+              <span className="text-gray-300 mr-2">Suivre Bella :</span>
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -215,27 +212,27 @@ const Footer = () => {
                 href="/privacy"
                 className="text-gray-300 hover:text-primary transition-colors duration-200"
               >
-                Privacy Policy
+                Politique de confidentialité
               </a>
               <a
                 href="/terms"
                 className="text-gray-300 hover:text-primary transition-colors duration-200"
               >
-                Terms of Service
+                Conditions d&apos;utilisation
               </a>
               <a
                 href="/cookies"
                 className="text-gray-300 hover:text-primary transition-colors duration-200"
               >
-                Cookie Policy
+                Politique des cookies
               </a>
             </div>
 
             {/* Copyright */}
             <div className="flex items-center gap-1 text-gray-400 text-sm">
-              <span>© {currentYear} Luxe Home. Made with</span>
+              <span>© {currentYear} Bella création imagination. Réalisé avec</span>
               <Heart size={16} className="text-red-500" />
-              <span>by Luxe Team</span>
+              <span>par l&apos;équipe Bella</span>
             </div>
           </div>
         </div>
