@@ -9,6 +9,7 @@ import {
   Palette,
 } from "lucide-react";
 import Image from "next/image";
+import ScrollReveal from "./ScrollReveal";
 
 const services = [
   {
@@ -52,12 +53,12 @@ const services = [
       "Redonner du caractère à un intérieur sans tout changer, avec des choix pratiques et élégants.",
   },
   {
-    title: "Apprentissage des acquis divers",
-    label: "Transmission",
-    image: "/assets/Interior/Interior3.jpg",
+    title: "Cahiers d'activités & apprentissage",
+    label: "Parent-enfant",
+    image: "/assets/apprentissage%20/img3.png",
     icon: GraduationCap,
     description:
-      "Accompagnement et apprentissage autour des bases utiles pour mieux amenager et entretenir son cadre de vie.",
+      "Activités éducatives guidées avec lettres, cahiers, motricité fine et supports créatifs pour apprendre en douceur.",
   },
 ];
 
@@ -74,43 +75,46 @@ const Collection = () => {
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
             Bella création imagination accompagne les particuliers dans la
-            décoration de leurs intérieurs et dans l&apos;apprentissage de gestes,
-            repères et acquis utiles au quotidien.
+            décoration de leurs intérieurs et dans des temps d&apos;apprentissage
+            pensés pour les enfants, les parents et le quotidien familial.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 py-16 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <article
+          {services.map((service, index) => (
+            <ScrollReveal
+              as="div"
               key={service.title}
-              className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              delay={index * 90}
             >
-              <div className="relative h-64 overflow-hidden bg-slate-100">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 to-transparent" />
-                <Badge className="absolute left-4 top-4 bg-primary text-white">
-                  {service.label}
-                </Badge>
-              </div>
-
-              <div className="p-6">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
-                  <service.icon size={24} />
+              <article className="service-card group h-full overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/35 hover:shadow-2xl">
+                <div className="shine-hover relative h-64 overflow-hidden bg-slate-100">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="image-breathe object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 to-transparent" />
+                  <Badge className="float-soft absolute left-4 top-4 bg-primary text-white">
+                    {service.label}
+                  </Badge>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900">
-                  {service.title}
-                </h3>
-                <p className="mt-3 leading-7 text-slate-600">
-                  {service.description}
-                </p>
-              </div>
-            </article>
+
+                <div className="p-6">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                    <service.icon size={24} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-slate-600">
+                    {service.description}
+                  </p>
+                </div>
+              </article>
+            </ScrollReveal>
           ))}
         </div>
 

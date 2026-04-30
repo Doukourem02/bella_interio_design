@@ -5,9 +5,9 @@ const Banner = () => {
   return (
     <section id="accueil" className="relative min-h-[760px] overflow-hidden">
       <div className="absolute inset-0 bg-[url('/assets/banner.jpg')] bg-cover bg-[38%_bottom] md:bg-center" />
-      <div className="absolute inset-0 bg-slate-950/30" />
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(13,71,117,0.84)_0%,rgba(13,71,117,0.58)_42%,rgba(15,23,42,0.14)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-slate-950/35 to-transparent" />
+      <div className="absolute inset-0 bg-slate-950/20" />
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(13,71,117,0.64)_0%,rgba(13,71,117,0.36)_42%,rgba(15,23,42,0.08)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-slate-950/24 to-transparent" />
 
       <div className="relative container mx-auto flex min-h-[760px] items-center px-4 pt-28 lg:px-8">
         <div className="max-w-4xl text-white">
