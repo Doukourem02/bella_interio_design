@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   experimental: {
     webpackBuildWorker: true,
   },
@@ -21,6 +22,12 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   webpack: (webpackConfig) => {
+    webpackConfig.resolve.alias = {
+      ...(webpackConfig.resolve.alias || {}),
+      '@': path.resolve(dirname, 'src'),
+      '@payload-config': path.resolve(dirname, 'src/payload.config.ts'),
+    }
+
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
       '.js': ['.ts', '.tsx', '.js', '.jsx'],
