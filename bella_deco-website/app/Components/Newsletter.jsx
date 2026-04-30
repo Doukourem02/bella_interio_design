@@ -4,9 +4,9 @@ import { Mail, MapPin, Phone } from "lucide-react";
 const contacts = [
   {
     icon: Phone,
-    label: "Telephone France",
-    value: "+33 6 05 53 24 20",
-    href: "tel:+33605532420",
+    label: "WhatsApp",
+    value: "+2250704225474",
+    href: "tel:+2250704225474",
   },
   {
     icon: Phone,
@@ -16,15 +16,9 @@ const contacts = [
   },
   {
     icon: Mail,
-    label: "Email principal",
-    value: "britanie4@hotmail.com",
-    href: "mailto:britanie4@hotmail.com",
-  },
-  {
-    icon: Mail,
-    label: "Email secondaire",
-    value: "martinromano495@gmail.com",
-    href: "mailto:martinromano495@gmail.com",
+    label: "Email",
+    value: "karamokojuniorkone52@gmail.com",
+    href: "mailto:karamokojuniorkone52@gmail.com",
   },
 ];
 
@@ -47,7 +41,7 @@ const Newsletter = () => {
           </h2>
           <p className="mt-6 text-lg leading-8 text-white/75">
             Pour une décoration, un conseil couleur, un projet d&apos;agencement
-            ou un accompagnement autour des acquis divers, contactez Bella
+            ou un accompagnement autour des acquis divers, contactez Bellarose
             directement.
           </p>
         </div>
@@ -79,7 +73,7 @@ const Newsletter = () => {
             après un premier échange.
           </p>
           <Button asChild className="shrink-0">
-            <a href="mailto:britanie4@hotmail.com">Démarrer</a>
+            <a href="mailto:karamokojuniorkone52@gmail.com">Démarrer</a>
           </Button>
         </div>
       </div>

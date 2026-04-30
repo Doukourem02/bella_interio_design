@@ -72,7 +72,7 @@ const Testimonials = () => {
             Une experience douce et guidée
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Le site présente Bella comme une professionnelle de la décoration :
+            Le site présente Bellarose comme une professionnelle de la décoration :
             attentive aux personnes, aux espaces et aux apprentissages utiles.
           </p>
         </div>

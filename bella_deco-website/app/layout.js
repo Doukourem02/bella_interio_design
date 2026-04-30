@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 
 export const metadata = {
-  title: "Bella création imagination | Décoration d'intérieur",
+  title: "Bellarose création imagination | Décoration d'intérieur",
   description:
     "Décoration d'intérieur, agencement, conseil couleur et apprentissage des acquis divers.",
 };

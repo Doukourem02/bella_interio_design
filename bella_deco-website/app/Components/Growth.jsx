@@ -36,7 +36,7 @@ const Growth = () => {
             Une décoration pensée avec vous
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Le travail de Bella repose sur l&apos;écoute, la créativité et la
+            Le travail de Bellarose repose sur l&apos;écoute, la créativité et la
             transmission. L&apos;objectif est de créer un intérieur agréable, mais
             aussi de vous aider a mieux comprendre les choix qui le rendent
             harmonieux.

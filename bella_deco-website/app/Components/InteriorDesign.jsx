@@ -71,7 +71,7 @@ const InteriorDesign = () => {
                 Transformer un lieu sans perdre son âme
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Bella création imagination aide à faire le lien entre vos idées
+                Bellarose création imagination aide à faire le lien entre vos idées
                 et un résultat concret : un intérieur plus lisible, plus beau,
                 plus pratique et plus personnel.
               </p>
@@ -128,7 +128,7 @@ const InteriorDesign = () => {
                 variant="outline"
                 className="h-12 border-slate-300 px-7 text-slate-700"
               >
-                <a href="mailto:martinromano495@gmail.com">
+                <a href="mailto:karamokojuniorkone52@gmail.com">
                   <MessageCircle size={18} />
                   Écrire par email
                 </a>

@@ -17,7 +17,7 @@ const Banner = () => {
           </div>
 
           <h1 className="max-w-5xl text-5xl font-bold leading-tight sm:text-6xl lg:text-8xl">
-            Bella création imagination
+            Bellarose création imagination
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-white/86 lg:text-xl">
@@ -28,9 +28,9 @@ const Banner = () => {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button asChild className="h-12 px-7">
-              <a href="tel:+33605532420">
+              <a href="tel:+2250704225474">
                 <Phone size={18} />
-                +33 6 05 53 24 20
+                +2250704225474
               </a>
             </Button>
             <Button
@@ -38,7 +38,7 @@ const Banner = () => {
               variant="outline"
               className="h-12 border-white/50 bg-white/10 px-7 text-white hover:bg-white hover:text-slate-950"
             >
-              <a href="mailto:britanie4@hotmail.com">
+              <a href="mailto:karamokojuniorkone52@gmail.com">
                 <Mail size={18} />
                 Envoyer un email
               </a>

@@ -28,7 +28,7 @@ const Footer = () => {
               </div>
               <div>
                 <div className="text-2xl font-semibold">
-                  Bella création imagination
+                  Bellarose création imagination
                 </div>
                 <div className="text-sm uppercase tracking-[0.25em] text-white/50">
                   Décoration intérieure
@@ -38,17 +38,17 @@ const Footer = () => {
 
             <p className="max-w-xl leading-8 text-white/70">
               Spécialisée dans la décoration de l&apos;intérieur et l&apos;apprentissage
-              des acquis divers, Bella accompagne la transformation des espaces
+              des acquis divers, Bellarose accompagne la transformation des espaces
               avec écoute, imagination et sens du détail.
             </p>
 
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <a
-                href="tel:+33605532420"
+                href="tel:+2250704225474"
                 className="flex items-center gap-3 text-white/75 hover:text-primary"
               >
                 <Phone size={18} />
-                +33 6 05 53 24 20
+                +2250704225474
               </a>
               <a
                 href="tel:+14182955936"
@@ -58,18 +58,11 @@ const Footer = () => {
                 +1 418 295 5936
               </a>
               <a
-                href="mailto:britanie4@hotmail.com"
+                href="mailto:karamokojuniorkone52@gmail.com"
                 className="flex items-center gap-3 text-white/75 hover:text-primary"
               >
                 <Mail size={18} />
-                britanie4@hotmail.com
-              </a>
-              <a
-                href="mailto:martinromano495@gmail.com"
-                className="flex items-center gap-3 text-white/75 hover:text-primary"
-              >
-                <Mail size={18} />
-                martinromano495@gmail.com
+                karamokojuniorkone52@gmail.com
               </a>
             </div>
           </div>
@@ -104,7 +97,7 @@ const Footer = () => {
 
         <div className="mt-14 flex flex-col gap-6 border-t border-white/10 pt-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-sm text-white/50">Suivre Bella</span>
+            <span className="text-sm text-white/50">Suivre Bellarose</span>
             <a
               href="https://facebook.com"
               target="_blank"
@@ -126,7 +119,7 @@ const Footer = () => {
           </div>
 
           <p className="text-sm text-white/50">
-            © {currentYear} Bella création imagination. Tous droits réservés.
+            © {currentYear} Bellarose création imagination. Tous droits réservés.
           </p>
         </div>
       </div>

@@ -74,7 +74,7 @@ const Collection = () => {
             Des espaces qui vous ressemblent
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Bella création imagination accompagne les particuliers dans la
+            Bellarose création imagination accompagne les particuliers dans la
             décoration de leurs intérieurs et dans des temps d&apos;apprentissage
             pensés pour les enfants, les parents et le quotidien familial.
           </p>

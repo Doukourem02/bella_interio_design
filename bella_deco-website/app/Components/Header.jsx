@@ -28,7 +28,7 @@ export default function Header() {
           <div className="flex lg:flex-1">
             <Link href="#accueil" className="text-white">
               <span className="block text-2xl font-semibold leading-none tracking-wide">
-                Bella
+                Bellarose
               </span>
               <span className="text-xs uppercase tracking-[0.35em] text-white/80">
                 création imagination
@@ -62,7 +62,7 @@ export default function Header() {
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Button asChild>
-              <a href="tel:+33605532420">
+              <a href="tel:+2250704225474">
                 <Phone size={18} />
                 Appeler
               </a>
@@ -81,7 +81,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="#accueil" className="text-white">
               <span className="block text-2xl font-semibold leading-none">
-                Bella
+                Bellarose
               </span>
               <span className="text-xs uppercase tracking-[0.3em] text-white/70">
                 création imagination
@@ -112,9 +112,9 @@ export default function Header() {
 
           <div className="mt-8">
             <Button asChild className="w-full">
-              <a href="tel:+33605532420">
+              <a href="tel:+2250704225474">
                 <Phone size={18} />
-                Appeler Bella
+                Appeler Bellarose
               </a>
             </Button>
           </div>
