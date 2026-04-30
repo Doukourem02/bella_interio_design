@@ -1,28 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-const contacts = [
-  {
-    icon: Phone,
-    label: "WhatsApp",
-    value: "+2250704225474",
-    href: "tel:+2250704225474",
-  },
-  {
-    icon: Phone,
-    label: "Telephone Canada",
-    value: "+1 418 295 5936",
-    href: "tel:+14182955936",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "karamokojuniorkone52@gmail.com",
-    href: "mailto:karamokojuniorkone52@gmail.com",
-  },
-];
-
-const Newsletter = () => {
+const Newsletter = ({ siteSettings }) => {
+  const contacts = [
+    {
+      icon: Phone,
+      label: "WhatsApp",
+      value: siteSettings.whatsappDisplay,
+      href: siteSettings.whatsappHref,
+    },
+    {
+      icon: Phone,
+      label: "Telephone Canada",
+      value: siteSettings.secondaryPhoneDisplay,
+      href: siteSettings.secondaryPhoneHref,
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      value: siteSettings.primaryEmail,
+      href: siteSettings.primaryEmailHref,
+    },
+  ];
   return (
     <section
       id="contact"
@@ -41,8 +40,8 @@ const Newsletter = () => {
           </h2>
           <p className="mt-6 text-lg leading-8 text-white/75">
             Pour une décoration, un conseil couleur, un projet d&apos;agencement
-            ou un accompagnement autour des acquis divers, contactez Bellarose
-            directement.
+            ou un accompagnement autour des acquis divers, contactez{" "}
+            {siteSettings.brandName} directement.
           </p>
         </div>
 
@@ -73,7 +72,7 @@ const Newsletter = () => {
             après un premier échange.
           </p>
           <Button asChild className="shrink-0">
-            <a href="mailto:karamokojuniorkone52@gmail.com">Démarrer</a>
+            <a href={siteSettings.primaryEmailHref}>Démarrer</a>
           </Button>
         </div>
       </div>

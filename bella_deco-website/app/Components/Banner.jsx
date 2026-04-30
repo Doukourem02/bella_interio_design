@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Sparkles } from "lucide-react";
 
-const Banner = () => {
+const Banner = ({ siteSettings }) => {
   return (
     <section id="accueil" className="relative min-h-[760px] overflow-hidden">
       <div className="absolute inset-0 bg-[url('/assets/banner.jpg')] bg-cover bg-[38%_bottom] md:bg-center" />
@@ -17,7 +17,7 @@ const Banner = () => {
           </div>
 
           <h1 className="max-w-5xl text-5xl font-bold leading-tight sm:text-6xl lg:text-8xl">
-            Bellarose création imagination
+            {siteSettings.businessName}
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-white/86 lg:text-xl">
@@ -28,9 +28,9 @@ const Banner = () => {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button asChild className="h-12 px-7">
-              <a href="tel:+2250704225474">
+              <a href={siteSettings.whatsappHref}>
                 <Phone size={18} />
-                +2250704225474
+                {siteSettings.whatsappDisplay}
               </a>
             </Button>
             <Button
@@ -38,7 +38,7 @@ const Banner = () => {
               variant="outline"
               className="h-12 border-white/50 bg-white/10 px-7 text-white hover:bg-white hover:text-slate-950"
             >
-              <a href="mailto:karamokojuniorkone52@gmail.com">
+              <a href={siteSettings.primaryEmailHref}>
                 <Mail size={18} />
                 Envoyer un email
               </a>

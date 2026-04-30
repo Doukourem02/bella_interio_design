@@ -1,30 +1,10 @@
-import { BookOpen, HeartHandshake, HousePlus, Sparkles } from "lucide-react";
+import { HeartHandshake } from "lucide-react";
+import { growthPillars as pillars } from "@/app/data/growth";
 import Image from "next/image";
 import LearningGallery from "./LearningGallery";
 import ScrollReveal from "./ScrollReveal";
 
-const pillars = [
-  {
-    icon: HousePlus,
-    title: "Observer l'espace",
-    description:
-      "Comprendre les volumes, la lumière, les habitudes et les besoins avant de proposer une ambiance.",
-  },
-  {
-    icon: Sparkles,
-    title: "Composer l'ambiance",
-    description:
-      "Construire une direction claire avec couleurs, matières, mobilier, objets et finitions.",
-  },
-  {
-    icon: BookOpen,
-    title: "Transmettre les acquis",
-    description:
-      "Expliquer les choix et partager des bases simples pour rendre la personne plus autonome.",
-  },
-];
-
-const Growth = () => {
+const Growth = ({ siteSettings, learningGallerySlides }) => {
   return (
     <section id="approche" className="bg-slate-50">
       <div className="container mx-auto px-4 py-24 lg:px-8">
@@ -36,10 +16,10 @@ const Growth = () => {
             Une décoration pensée avec vous
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Le travail de Bellarose repose sur l&apos;écoute, la créativité et la
-            transmission. L&apos;objectif est de créer un intérieur agréable, mais
-            aussi de vous aider a mieux comprendre les choix qui le rendent
-            harmonieux.
+            Le travail de {siteSettings.brandName} repose sur l&apos;écoute, la
+            créativité et la transmission. L&apos;objectif est de créer un intérieur
+            agréable, mais aussi de vous aider a mieux comprendre les choix qui
+            le rendent harmonieux.
           </p>
         </div>
 
@@ -68,7 +48,7 @@ const Growth = () => {
         <ScrollReveal className="overflow-hidden rounded-lg bg-slate-950 text-white">
           <div className="relative min-h-[220px] overflow-hidden border-b border-white/10 sm:min-h-[280px] lg:min-h-[340px]">
             <Image
-              src="/assets/apprentissage%20/img2.png"
+              src="/assets/apprentissage/img2.png"
               alt="Edu Explore, ressources éducatives pour apprendre en s'amusant"
               fill
               sizes="(min-width: 1024px) 1180px, 100vw"
@@ -121,7 +101,7 @@ const Growth = () => {
               ))}
             </div>
 
-            <LearningGallery />
+            <LearningGallery slides={learningGallerySlides} />
           </div>
         </ScrollReveal>
       </div>

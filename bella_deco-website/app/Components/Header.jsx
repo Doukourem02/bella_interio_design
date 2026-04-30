@@ -12,10 +12,11 @@ const navigation = [
   { name: "Prestations", href: "#prestations" },
   { name: "Approche", href: "#approche" },
   { name: "Témoignages", href: "#temoignages" },
+  { name: "Conseils", href: "/conseils" },
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Header() {
+export default function Header({ siteSettings }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -28,10 +29,10 @@ export default function Header() {
           <div className="flex lg:flex-1">
             <Link href="#accueil" className="text-white">
               <span className="block text-2xl font-semibold leading-none tracking-wide">
-                Bellarose
+                {siteSettings.brandName}
               </span>
               <span className="text-xs uppercase tracking-[0.35em] text-white/80">
-                création imagination
+                {siteSettings.brandTagline}
               </span>
             </Link>
           </div>
@@ -62,7 +63,7 @@ export default function Header() {
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Button asChild>
-              <a href="tel:+2250704225474">
+              <a href={siteSettings.whatsappHref}>
                 <Phone size={18} />
                 Appeler
               </a>
@@ -81,10 +82,10 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="#accueil" className="text-white">
               <span className="block text-2xl font-semibold leading-none">
-                Bellarose
+                {siteSettings.brandName}
               </span>
               <span className="text-xs uppercase tracking-[0.3em] text-white/70">
-                création imagination
+                {siteSettings.brandTagline}
               </span>
             </Link>
             <button
@@ -112,9 +113,9 @@ export default function Header() {
 
           <div className="mt-8">
             <Button asChild className="w-full">
-              <a href="tel:+2250704225474">
+              <a href={siteSettings.whatsappHref}>
                 <Phone size={18} />
-                Appeler Bellarose
+                Appeler {siteSettings.brandName}
               </a>
             </Button>
           </div>

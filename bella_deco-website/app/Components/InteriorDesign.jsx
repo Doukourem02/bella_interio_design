@@ -57,7 +57,7 @@ const benefits = [
   "Contact direct et humain",
 ];
 
-const InteriorDesign = () => {
+const InteriorDesign = ({ siteSettings }) => {
   return (
     <section className="bg-white">
       <div className="container mx-auto px-4 py-24 lg:px-8">
@@ -71,9 +71,9 @@ const InteriorDesign = () => {
                 Transformer un lieu sans perdre son âme
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Bellarose création imagination aide à faire le lien entre vos idées
-                et un résultat concret : un intérieur plus lisible, plus beau,
-                plus pratique et plus personnel.
+                {siteSettings.businessName} aide à faire le lien entre vos idées
+                et un résultat concret : un intérieur plus lisible, plus beau, plus
+                pratique et plus personnel.
               </p>
             </div>
 
@@ -128,7 +128,7 @@ const InteriorDesign = () => {
                 variant="outline"
                 className="h-12 border-slate-300 px-7 text-slate-700"
               >
-                <a href="mailto:karamokojuniorkone52@gmail.com">
+                <a href={siteSettings.primaryEmailHref}>
                   <MessageCircle size={18} />
                   Écrire par email
                 </a>

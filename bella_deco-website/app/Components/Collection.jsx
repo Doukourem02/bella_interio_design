@@ -1,68 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Brush,
-  GraduationCap,
-  Home,
-  LampDesk,
-  Layers,
-  Palette,
-} from "lucide-react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
-const services = [
-  {
-    title: "Décoration d'intérieur",
-    label: "Espaces de vie",
-    image: "/assets/collections/sofa.jpg",
-    icon: Home,
-    description:
-      "Création d'ambiances harmonieuses pour salons, chambres, bureaux et espaces familiaux.",
-  },
-  {
-    title: "Choix des couleurs",
-    label: "Harmonie",
-    image: "/assets/collections/lamp.jpg",
-    icon: Palette,
-    description:
-      "Association des teintes, matières et textures pour donner une identité claire à chaque pièce.",
-  },
-  {
-    title: "Agencement & mise en scene",
-    label: "Valorisation",
-    image: "/assets/Interior/Interior1.jpg",
-    icon: Layers,
-    description:
-      "Organisation du mobilier, circulation fluide et mise en valeur des volumes existants.",
-  },
-  {
-    title: "Accessoires & lumières",
-    label: "Details",
-    image: "/assets/collections/lamp2.jpg",
-    icon: LampDesk,
-    description:
-      "Sélection de luminaires, objets décoratifs, textiles et finitions pour signer l'ambiance.",
-  },
-  {
-    title: "Relooking déco",
-    label: "Transformation",
-    image: "/assets/Interior/Interior4.jpg",
-    icon: Brush,
-    description:
-      "Redonner du caractère à un intérieur sans tout changer, avec des choix pratiques et élégants.",
-  },
-  {
-    title: "Cahiers d'activités & apprentissage",
-    label: "Parent-enfant",
-    image: "/assets/apprentissage%20/img3.png",
-    icon: GraduationCap,
-    description:
-      "Activités éducatives guidées avec lettres, cahiers, motricité fine et supports créatifs pour apprendre en douceur.",
-  },
-];
-
-const Collection = () => {
+const Collection = ({ services, siteSettings }) => {
   return (
     <section id="prestations" className="bg-white">
       <div className="container mx-auto px-4 py-24 lg:px-8">
@@ -74,7 +15,7 @@ const Collection = () => {
             Des espaces qui vous ressemblent
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Bellarose création imagination accompagne les particuliers dans la
+            {siteSettings.businessName} accompagne les particuliers dans la
             décoration de leurs intérieurs et dans des temps d&apos;apprentissage
             pensés pour les enfants, les parents et le quotidien familial.
           </p>
@@ -103,9 +44,6 @@ const Collection = () => {
                 </div>
 
                 <div className="p-6">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                    <service.icon size={24} />
-                  </div>
                   <h3 className="text-xl font-semibold text-slate-900">
                     {service.title}
                   </h3>

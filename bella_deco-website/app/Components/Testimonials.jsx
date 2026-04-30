@@ -3,34 +3,7 @@
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Projet salon",
-    role: "Ambiance chaleureuse",
-    rating: 5,
-    text: "Une pièce peut changer totalement quand les couleurs, la lumière et les objets dialoguent ensemble.",
-    initials: "S",
-  },
-  {
-    id: 2,
-    name: "Projet chambre",
-    role: "Repos & harmonie",
-    rating: 5,
-    text: "La décoration devient plus simple quand chaque choix a une raison et une place dans l'ensemble.",
-    initials: "C",
-  },
-  {
-    id: 3,
-    name: "Accompagnement",
-    role: "Apprentissage des acquis",
-    rating: 5,
-    text: "L'objectif est aussi de transmettre des repères pour continuer à prendre soin de son intérieur.",
-    initials: "A",
-  },
-];
-
-const Testimonials = () => {
+const Testimonials = ({ siteSettings, testimonials }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -72,7 +45,8 @@ const Testimonials = () => {
             Une experience douce et guidée
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Le site présente Bellarose comme une professionnelle de la décoration :
+            Le site présente {siteSettings.brandName} comme une professionnelle
+            de la décoration :
             attentive aux personnes, aux espaces et aux apprentissages utiles.
           </p>
         </div>
