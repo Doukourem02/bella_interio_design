@@ -12,7 +12,10 @@ export const Users: CollectionConfig = {
     description:
       'Ici vous créez les personnes qui peuvent ouvrir le panneau de gestion (connexion avec email et mot de passe). Les visiteurs du site public ne sont pas listés ici.',
   },
-  auth: true,
+  auth: {
+    /** Durée de connexion au panneau (évite de retaper email / mot de passe trop souvent). */
+    tokenExpiration: 60 * 60 * 24 * 14,
+  },
   fields: [
     // Email added by default
     // Add more fields as needed

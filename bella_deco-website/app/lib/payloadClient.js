@@ -16,7 +16,8 @@ export function getCmsAdminUrl() {
     .toString()
     .replace(/\/$/, "");
   if (!base) return null;
-  return `${base}/admin`;
+  /** Politique stricte: chaque clic force une déconnexion puis demande la reconnexion. */
+  return `${base}/admin/logout`;
 }
 
 async function payloadFetch(path, { revalidate = 60 } = {}) {
