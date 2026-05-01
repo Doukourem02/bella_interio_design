@@ -50,6 +50,11 @@ const Collection = ({ services, siteSettings }) => {
                   <p className="mt-3 leading-7 text-slate-600">
                     {service.description}
                   </p>
+                  {service.priceLabel ? (
+                    <p className="mt-4 text-sm font-semibold text-primary">
+                      {service.priceLabel}
+                    </p>
+                  ) : null}
                 </div>
               </article>
             </ScrollReveal>
@@ -58,7 +63,7 @@ const Collection = ({ services, siteSettings }) => {
 
         <div className="text-center">
           <Button asChild className="h-12 px-8">
-            <a href="#contact">Demander un renseignement</a>
+            <a href="/#contact">Demander un renseignement</a>
           </Button>
         </div>
       </div>

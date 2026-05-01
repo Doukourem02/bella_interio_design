@@ -56,6 +56,7 @@ export function mapServices(docs) {
     label: service.label || "Prestation",
     image: mediaUrlFromRelation(service.image, fallbackServiceImages[index % fallbackServiceImages.length]),
     description: service.description || "",
+    priceLabel: service.priceLabel?.trim() || "",
   }));
 }
 
