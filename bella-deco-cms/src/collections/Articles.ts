@@ -35,9 +35,13 @@ export const Articles: CollectionConfig = {
     },
     {
       name: 'coverImage',
-      type: 'relationship',
+      type: 'upload',
       relationTo: 'media',
       label: 'Image de couverture',
+      admin: {
+        description:
+          'Glissez-déposez un fichier ici ou choisissez dans la bibliothèque — pas besoin de passer par Média avant.',
+      },
     },
     {
       name: 'priceLabel',

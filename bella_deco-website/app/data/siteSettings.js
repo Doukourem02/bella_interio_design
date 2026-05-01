@@ -1,4 +1,5 @@
 export const siteSettings = {
+  logoUrl: "",
   brandName: "Bellarose",
   brandTagline: "création imagination",
   businessName: "Bellarose création imagination",

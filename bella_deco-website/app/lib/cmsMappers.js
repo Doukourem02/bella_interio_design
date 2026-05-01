@@ -33,10 +33,16 @@ export function mapSiteSettings(settings) {
     settings.secondaryPhone || fallbackSiteSettings.secondaryPhoneDisplay;
   const primaryEmail = settings.email || fallbackSiteSettings.primaryEmail;
 
+  const logoUrl =
+    settings.logo && typeof settings.logo === "object"
+      ? mediaUrlFromRelation(settings.logo, "") || ""
+      : "";
+
   return {
     brandName: settings.brandName || fallbackSiteSettings.brandName,
     brandTagline: settings.brandTagline || fallbackSiteSettings.brandTagline,
     businessName: settings.businessName || fallbackSiteSettings.businessName,
+    logoUrl,
     whatsappDisplay,
     whatsappHref: `tel:${whatsappDisplay.replace(/\s+/g, "")}`,
     primaryEmail,

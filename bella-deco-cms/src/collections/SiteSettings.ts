@@ -32,6 +32,16 @@ export const SiteSettings: CollectionConfig = {
       label: 'Tagline',
     },
     {
+      name: 'logo',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Logo du site',
+      admin: {
+        description:
+          'Optionnel. PNG ou SVG avec fond transparent recommandé. Sans logo, le nom court et la tagline restent affichés en texte.',
+      },
+    },
+    {
       name: 'whatsapp',
       type: 'text',
       required: true,

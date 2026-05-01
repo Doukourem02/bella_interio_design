@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Facebook, Instagram, Mail, Phone, Sparkles } from "lucide-react";
 
 const Footer = ({ siteSettings, services = [] }) => {
@@ -16,9 +17,21 @@ const Footer = ({ siteSettings, services = [] }) => {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-md bg-primary text-white">
-                <Sparkles size={24} />
-              </div>
+              {siteSettings.logoUrl ? (
+                <div className="relative h-14 w-40 shrink-0">
+                  <Image
+                    src={siteSettings.logoUrl}
+                    alt={siteSettings.businessName}
+                    width={180}
+                    height={56}
+                    className="h-14 w-auto max-w-[10rem] object-contain object-left"
+                  />
+                </div>
+              ) : (
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary text-white">
+                  <Sparkles size={24} />
+                </div>
+              )}
               <div>
                 <div className="text-2xl font-semibold">
                   {siteSettings.businessName}

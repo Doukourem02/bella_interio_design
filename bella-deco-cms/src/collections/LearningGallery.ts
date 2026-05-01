@@ -29,10 +29,13 @@ export const LearningGallery: CollectionConfig = {
     },
     {
       name: 'image',
-      type: 'relationship',
+      type: 'upload',
       relationTo: 'media',
       required: true,
       label: 'Image',
+      admin: {
+        description: 'Upload direct ou sélection dans la bibliothèque.',
+      },
     },
     {
       name: 'order',

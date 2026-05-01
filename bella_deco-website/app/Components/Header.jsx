@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -42,17 +43,33 @@ export default function Header({ siteSettings }) {
               href="/"
               className={cn(isHome ? "text-white" : "text-slate-900")}
             >
-              <span className="block text-2xl font-semibold leading-none tracking-wide">
-                {siteSettings.brandName}
-              </span>
-              <span
-                className={cn(
-                  "text-xs uppercase tracking-[0.35em]",
-                  isHome ? "text-white/80" : "text-slate-500"
-                )}
-              >
-                {siteSettings.brandTagline}
-              </span>
+              {siteSettings.logoUrl ? (
+                <Image
+                  src={siteSettings.logoUrl}
+                  alt={siteSettings.brandName}
+                  width={200}
+                  height={48}
+                  className={cn(
+                    "h-10 w-auto max-w-[12rem] object-contain object-left",
+                    isHome && "drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
+                  )}
+                  priority
+                />
+              ) : (
+                <>
+                  <span className="block text-2xl font-semibold leading-none tracking-wide">
+                    {siteSettings.brandName}
+                  </span>
+                  <span
+                    className={cn(
+                      "text-xs uppercase tracking-[0.35em]",
+                      isHome ? "text-white/80" : "text-slate-500"
+                    )}
+                  >
+                    {siteSettings.brandTagline}
+                  </span>
+                </>
+              )}
             </Link>
           </div>
 
@@ -108,12 +125,24 @@ export default function Header({ siteSettings }) {
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-950 p-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-white">
-              <span className="block text-2xl font-semibold leading-none">
-                {siteSettings.brandName}
-              </span>
-              <span className="text-xs uppercase tracking-[0.3em] text-white/70">
-                {siteSettings.brandTagline}
-              </span>
+              {siteSettings.logoUrl ? (
+                <Image
+                  src={siteSettings.logoUrl}
+                  alt={siteSettings.brandName}
+                  width={180}
+                  height={44}
+                  className="h-9 w-auto max-w-[10rem] object-contain object-left"
+                />
+              ) : (
+                <>
+                  <span className="block text-2xl font-semibold leading-none">
+                    {siteSettings.brandName}
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-white/70">
+                    {siteSettings.brandTagline}
+                  </span>
+                </>
+              )}
             </Link>
             <button
               type="button"

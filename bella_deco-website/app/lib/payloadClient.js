@@ -18,7 +18,7 @@ async function payloadFetch(path, { revalidate = 60 } = {}) {
 export async function getSiteSettings() {
   try {
     const data = await payloadFetch(
-      "/api/siteSettings?limit=1&sort=-updatedAt&depth=0",
+      "/api/siteSettings?limit=1&sort=-updatedAt&depth=1",
       { revalidate: 30 }
     );
     return data.docs?.[0] ?? null;
