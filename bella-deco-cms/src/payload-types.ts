@@ -203,6 +203,30 @@ export interface SiteSetting {
    */
   logo?: (number | null) | Media;
   /**
+   * Court texte dans le petit badge en haut (ex. : Décoration d’intérieur & apprentissage).
+   */
+  homeBadgeText?: string | null;
+  /**
+   * Phrase de présentation visible en grand sur la page d’accueil.
+   */
+  homeIntroText?: string | null;
+  /**
+   * Texte affiché sur le bouton email (ex. : Envoyer un email).
+   */
+  homeEmailButtonText?: string | null;
+  /**
+   * Texte du premier petit bloc sous les boutons.
+   */
+  homeService1?: string | null;
+  /**
+   * Texte du deuxième petit bloc sous les boutons.
+   */
+  homeService2?: string | null;
+  /**
+   * Texte du troisième petit bloc sous les boutons.
+   */
+  homeService3?: string | null;
+  /**
    * Numéro utilisé pour le bouton « Appeler » et les contacts (indicatif inclus si besoin).
    */
   whatsapp: string;
@@ -543,6 +567,12 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   brandName?: T;
   brandTagline?: T;
   logo?: T;
+  homeBadgeText?: T;
+  homeIntroText?: T;
+  homeEmailButtonText?: T;
+  homeService1?: T;
+  homeService2?: T;
+  homeService3?: T;
   whatsapp?: T;
   email?: T;
   secondaryPhone?: T;

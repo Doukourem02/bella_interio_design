@@ -72,6 +72,66 @@ export const SiteSettings: CollectionConfig = {
       },
     },
     {
+      type: 'collapsible',
+      label: 'Textes de la page d’accueil',
+      admin: {
+        initCollapsed: false,
+      },
+      fields: [
+        {
+          name: 'homeBadgeText',
+          type: 'text',
+          label: 'Petit texte en haut du grand titre',
+          admin: {
+            description:
+              'Court texte dans le petit badge en haut (ex. : Décoration d’intérieur & apprentissage).',
+          },
+        },
+        {
+          name: 'homeIntroText',
+          type: 'textarea',
+          label: 'Texte de présentation sous le grand titre',
+          admin: {
+            description:
+              'Phrase de présentation visible en grand sur la page d’accueil.',
+          },
+        },
+        {
+          name: 'homeEmailButtonText',
+          type: 'text',
+          label: 'Texte du bouton email',
+          admin: {
+            description:
+              'Texte affiché sur le bouton email (ex. : Envoyer un email).',
+          },
+        },
+        {
+          name: 'homeService1',
+          type: 'text',
+          label: 'Petit bloc 1',
+          admin: {
+            description: 'Texte du premier petit bloc sous les boutons.',
+          },
+        },
+        {
+          name: 'homeService2',
+          type: 'text',
+          label: 'Petit bloc 2',
+          admin: {
+            description: 'Texte du deuxième petit bloc sous les boutons.',
+          },
+        },
+        {
+          name: 'homeService3',
+          type: 'text',
+          label: 'Petit bloc 3',
+          admin: {
+            description: 'Texte du troisième petit bloc sous les boutons.',
+          },
+        },
+      ],
+    },
+    {
       name: 'whatsapp',
       type: 'text',
       required: true,

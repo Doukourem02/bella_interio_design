@@ -42,6 +42,13 @@ export function mapSiteSettings(settings) {
     brandName: settings.brandName || fallbackSiteSettings.brandName,
     brandTagline: settings.brandTagline || fallbackSiteSettings.brandTagline,
     businessName: settings.businessName || fallbackSiteSettings.businessName,
+    homeBadgeText: settings.homeBadgeText || fallbackSiteSettings.homeBadgeText,
+    homeIntroText: settings.homeIntroText || fallbackSiteSettings.homeIntroText,
+    homeEmailButtonText:
+      settings.homeEmailButtonText || fallbackSiteSettings.homeEmailButtonText,
+    homeService1: settings.homeService1 || fallbackSiteSettings.homeService1,
+    homeService2: settings.homeService2 || fallbackSiteSettings.homeService2,
+    homeService3: settings.homeService3 || fallbackSiteSettings.homeService3,
     logoUrl,
     whatsappDisplay,
     whatsappHref: `tel:${whatsappDisplay.replace(/\s+/g, "")}`,

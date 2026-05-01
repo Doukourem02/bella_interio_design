@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone, Sparkles } from "lucide-react";
 
 const Banner = ({ siteSettings }) => {
+  const homeServices = [
+    siteSettings.homeService1,
+    siteSettings.homeService2,
+    siteSettings.homeService3,
+  ].filter(Boolean);
+
   return (
     <section id="accueil" className="relative min-h-[760px] overflow-hidden">
       <div className="absolute inset-0 bg-[url('/assets/banner.jpg')] bg-cover bg-[38%_bottom] md:bg-center" />
@@ -13,7 +19,7 @@ const Banner = ({ siteSettings }) => {
         <div className="max-w-4xl text-white">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
             <Sparkles size={18} className="text-primary" />
-            Décoration d&apos;intérieur & apprentissage
+            {siteSettings.homeBadgeText}
           </div>
 
           <h1 className="max-w-5xl text-5xl font-bold leading-tight sm:text-6xl lg:text-8xl">
@@ -21,9 +27,7 @@ const Banner = ({ siteSettings }) => {
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-white/86 lg:text-xl">
-            Un accompagnement chaleureux pour imaginer, harmoniser et
-            transformer vos espaces intérieurs avec une touche bleue, élégante
-            et personnelle.
+            {siteSettings.homeIntroText}
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -40,13 +44,13 @@ const Banner = ({ siteSettings }) => {
             >
               <a href={siteSettings.primaryEmailHref}>
                 <Mail size={18} />
-                Envoyer un email
+                {siteSettings.homeEmailButtonText}
               </a>
             </Button>
           </div>
 
           <div className="mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
-            {["Décoration", "Conseil couleur", "Apprentissage"].map((item) => (
+            {homeServices.map((item) => (
               <div
                 key={item}
                 className="border-l-2 border-primary bg-white/8 px-4 py-3 text-sm font-medium text-white/90 backdrop-blur-sm"
