@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getArticleBySlug, getArticles } from "@/app/lib/payloadClient";
 import { mapArticles } from "@/app/lib/cmsMappers";
+import ArticlePriceLine from "../ArticlePriceLine";
 
 function extractText(node) {
   if (!node) return "";
@@ -53,6 +54,11 @@ export default async function ArticlePage({ params }) {
         <p className="mt-3 text-slate-500">
           {new Date(article.publishedAt).toLocaleDateString("fr-FR")}
         </p>
+        <ArticlePriceLine
+          className="mt-2 text-base text-slate-700"
+          priceLabel={article.priceLabel}
+          promotionalPriceLabel={article.promotionalPriceLabel}
+        />
 
         <div className="relative mt-8 h-[360px] overflow-hidden rounded-lg bg-slate-100">
           <Image

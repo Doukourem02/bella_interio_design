@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getArticles } from "@/app/lib/payloadClient";
 import { mapArticles } from "@/app/lib/cmsMappers";
+import ArticlePriceLine from "./ArticlePriceLine";
 
 export const metadata = {
   title: "Conseils | Bellarose",
@@ -53,6 +54,11 @@ export default async function ConseilsPage() {
                   <h2 className="mt-3 text-2xl font-semibold text-slate-900">
                     {article.title}
                   </h2>
+                  <ArticlePriceLine
+                    className="mt-2 text-sm text-slate-600"
+                    priceLabel={article.priceLabel}
+                    promotionalPriceLabel={article.promotionalPriceLabel}
+                  />
                   <p className="mt-3 text-slate-600">
                     {article.excerpt || "Lire cet article pour en savoir plus."}
                   </p>

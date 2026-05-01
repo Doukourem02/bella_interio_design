@@ -99,7 +99,16 @@ export const Articles: CollectionConfig = {
       label: 'Prix ou mention (facultatif)',
       admin: {
         description:
-          'Texte libre si l’article concerne une offre payante (ex. : À partir de 10 000 F, Sur devis). Laissez vide si ce n’est pas le cas.',
+          'Prix ou texte habituellement affiché (ex. : À partir de 10 000 F, Sur devis). Si vous remplissez aussi « Prix promotionnel », ce texte sera barré sur le site et le prix promo sera mis en avant.',
+      },
+    },
+    {
+      name: 'promotionalPriceLabel',
+      type: 'text',
+      label: 'Prix promotionnel (facultatif)',
+      admin: {
+        description:
+          'Remplissez uniquement en cas d’offre : sur le site, le « Prix ou mention » ci-dessus sera barré et ce texte sera affiché à côté. Laissez vide pour n’afficher qu’un seul prix ou mention, sans barré.',
       },
     },
     {

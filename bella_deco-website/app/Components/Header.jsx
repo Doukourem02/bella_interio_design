@@ -19,10 +19,21 @@ const navigation = [
   { name: "Contact", href: "/#contact" },
 ];
 
-export default function Header({ siteSettings }) {
+export default function Header({ siteSettings, cmsAdminUrl }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
+
+  const navItems = cmsAdminUrl
+    ? [
+        ...navigation,
+        {
+          name: "Administration",
+          href: cmsAdminUrl,
+          external: true,
+        },
+      ]
+    : navigation;
 
   return (
     <header
@@ -88,21 +99,39 @@ export default function Header({ siteSettings }) {
           </div>
 
           <PopoverGroup className="hidden lg:flex lg:gap-x-10">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "group relative text-base tracking-wide transition-all duration-300",
-                  isHome
-                    ? "text-white hover:text-primary"
-                    : "text-slate-700 hover:text-primary"
-                )}
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "group relative text-base tracking-wide transition-all duration-300",
+                    isHome
+                      ? "text-white/90 hover:text-primary"
+                      : "text-slate-600 hover:text-primary"
+                  )}
+                  title="Ouvrir le panneau de gestion du site (connexion)"
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "group relative text-base tracking-wide transition-all duration-300",
+                    isHome
+                      ? "text-white hover:text-primary"
+                      : "text-slate-700 hover:text-primary"
+                  )}
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+                </Link>
+              )
+            )}
           </PopoverGroup>
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -155,16 +184,29 @@ export default function Header({ siteSettings }) {
           </div>
 
           <div className="mt-8 space-y-3">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-md border border-white/10 bg-white/5 px-4 py-3 text-base font-medium text-white transition-colors hover:border-primary hover:text-primary"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  title="Ouvrir le panneau de gestion du site (connexion)"
+                  className="block rounded-md border border-white/10 bg-white/5 px-4 py-3 text-base font-medium text-white/90 transition-colors hover:border-primary hover:text-primary"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block rounded-md border border-white/10 bg-white/5 px-4 py-3 text-base font-medium text-white transition-colors hover:border-primary hover:text-primary"
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           <div className="mt-8">

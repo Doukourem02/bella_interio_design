@@ -3,6 +3,22 @@ const CMS_BASE_URL =
   process.env.NEXT_PUBLIC_CMS_URL ||
   "http://localhost:3000";
 
+/**
+ * URL du panneau Payload (`…/admin`) pour un lien depuis le site vitrine.
+ * En production, renvoie null si ni CMS_URL ni NEXT_PUBLIC_CMS_URL ne sont définis
+ * (évite un lien vers localhost sur le site en ligne).
+ */
+export function getCmsAdminUrl() {
+  const explicit = process.env.CMS_URL || process.env.NEXT_PUBLIC_CMS_URL || "";
+  const base = (
+    explicit || (process.env.NODE_ENV === "development" ? CMS_BASE_URL : "")
+  )
+    .toString()
+    .replace(/\/$/, "");
+  if (!base) return null;
+  return `${base}/admin`;
+}
+
 async function payloadFetch(path, { revalidate = 60 } = {}) {
   const response = await fetch(`${CMS_BASE_URL}${path}`, {
     next: { revalidate },

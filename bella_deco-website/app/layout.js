@@ -1,7 +1,7 @@
 import "./globals.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import { getServices, getSiteSettings } from "./lib/payloadClient";
+import { getCmsAdminUrl, getServices, getSiteSettings } from "./lib/payloadClient";
 import { mapServices, mapSiteSettings } from "./lib/cmsMappers";
 
 export const metadata = {
@@ -22,7 +22,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="font-sans">
-        <Header siteSettings={siteSettings} />
+        <Header siteSettings={siteSettings} cmsAdminUrl={getCmsAdminUrl()} />
         {children}
         <Footer siteSettings={siteSettings} services={services} />
       </body>

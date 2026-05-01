@@ -128,6 +128,8 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Ici vous créez les personnes qui peuvent ouvrir le panneau de gestion (connexion avec email et mot de passe). Les visiteurs du site public ne sont pas listés ici.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -153,11 +155,16 @@ export interface User {
   collection: 'users';
 }
 /**
+ * Images uniquement (JPG, PNG, GIF, WebP, SVG…). Les vidéos (MP4, etc.) ne sont pas acceptées ici : elles provoquent une erreur à l’enregistrement. Les fichiers sont enregistrés sur le serveur dans le dossier « media » (pensez à un volume disque en production si besoin).
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
   id: number;
+  /**
+   * Décrivez l’image en une courte phrase (ex. : salon bleu avec canapé et plantes). Ce n’est pas le nom du fichier : le nom technique du fichier est créé tout seul à l’envoi. Ce texte aide les personnes malvoyantes et les moteurs de recherche.
+   */
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -172,85 +179,193 @@ export interface Media {
   focalY?: number | null;
 }
 /**
+ * Coordonnées et marque affichées sur tout le site (en-tête, pied de page, boutons d’appel). Une seule fiche suffit : ouvrez-la et modifiez-la plutôt que d’en créer plusieurs.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "siteSettings".
  */
 export interface SiteSetting {
   id: number;
+  /**
+   * Nom officiel affiché sur la page d’accueil et dans le pied de page (ex. Bellarose création imagination).
+   */
   businessName: string;
+  /**
+   * Mot ou courte signature dans le menu du haut (ex. Bellarose).
+   */
   brandName: string;
+  /**
+   * Petite ligne sous le nom dans le menu (souvent en majuscules discrètes).
+   */
   brandTagline?: string | null;
+  /**
+   * Facultatif. Image du logo (PNG ou SVG, fond transparent si possible). Sinon le site affiche le nom en texte.
+   */
+  logo?: (number | null) | Media;
+  /**
+   * Numéro utilisé pour le bouton « Appeler » et les contacts (indicatif inclus si besoin).
+   */
   whatsapp: string;
+  /**
+   * Adresse affichée et utilisée pour le lien « Envoyer un email » sur le site.
+   */
   email: string;
+  /**
+   * Autre numéro affiché dans le pied de page (facultatif).
+   */
   secondaryPhone?: string | null;
+  /**
+   * Adresse complète de la page, qui commence par https://
+   */
   facebookUrl?: string | null;
+  /**
+   * Adresse complète du profil ou de la page, qui commence par https://
+   */
   instagramUrl?: string | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
+ * Cartes « ce que nous faisons » sur la page d’accueil.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services".
  */
 export interface Service {
   id: number;
+  /**
+   * Nom principal sous la photo sur la page d’accueil.
+   */
   title: string;
+  /**
+   * Court texte affiché en badge sur l’image (ex. : Espaces de vie, Harmonie).
+   */
   label?: string | null;
+  /**
+   * Expliquez ce que vous proposez, en quelques phrases claires pour les visiteurs.
+   */
   description: string;
+  /**
+   * Envoyez une nouvelle photo ou choisissez-en une déjà enregistrée.
+   */
   image: number | Media;
   /**
-   * Exemple: "Sur devis", "A partir de 25 000 FCFA"
+   * Texte court affiché sous la description (ex. : Sur devis, À partir de 25 000 FCFA). Laissez vide si vous préférez ne rien montrer.
    */
   priceLabel?: string | null;
+  /**
+   * Les petits nombres apparaissent en premier.
+   */
   order: number;
+  /**
+   * Décochez pour masquer cette prestation sans la supprimer.
+   */
   isActive?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
+ * Avis clients affichés sur la page d’accueil.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "testimonials".
  */
 export interface Testimonial {
   id: number;
+  /**
+   * Comme vous souhaitez qu’il apparaisse sur le site (prénom seul, initiales, ou « Famille D. » par exemple).
+   */
   name: string;
+  /**
+   * Ex. : Rénovation salon, Couleurs chambre.
+   */
   role?: string | null;
   rating: number;
+  /**
+   * Le témoignage tel qu’il doit être lu par les visiteurs.
+   */
   text: string;
+  /**
+   * Portrait ou image libre de droits si vous en avez une.
+   */
   avatar?: (number | null) | Media;
+  /**
+   * Les petits nombres apparaissent en premier.
+   */
   order: number;
+  /**
+   * Décochez pour masquer ce témoignage sans le supprimer.
+   */
   isActive?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
+ * Images du carrousel « apprentissage » sur la page d’accueil. Une ligne = une diapositive.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "learningGallery".
  */
 export interface LearningGallery {
   id: number;
+  /**
+   * Court titre pour cette image dans le carrousel.
+   */
   title: string;
+  /**
+   * Phrase ou petit paragraphe qui décrit l’image ou l’activité.
+   */
   caption: string;
+  /**
+   * Envoyez une nouvelle photo ou choisissez-en une déjà enregistrée.
+   */
   image: number | Media;
+  /**
+   * Les petits nombres apparaissent en premier.
+   */
   order: number;
+  /**
+   * Permet de signaler une image importante dans la liste admin.
+   */
   isFeatured?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
+ * Articles du blog « Conseils » sur le site. Enregistrez en « Publié » pour qu’ils apparaissent en ligne.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "articles".
  */
 export interface Article {
   id: number;
+  /**
+   * Grand titre que les visiteurs lisent en haut de l’article.
+   */
   title: string;
+  /**
+   * Texte court sans espaces, idéalement avec des tirets (ex. : conseils-couleur-salon). Il apparaît dans l’adresse après /conseils/… Ce n’est pas le titre visible sur la page.
+   */
   slug: string;
+  /**
+   * Quelques lignes sous le titre sur la liste des articles et pour les aperçus.
+   */
   excerpt?: string | null;
+  /**
+   * Envoyez une nouvelle image ou reprenez une image déjà enregistrée sous Photos et fichiers.
+   */
   coverImage?: (number | null) | Media;
   /**
-   * Utile si vous publiez une ressource ou un produit.
+   * Prix ou texte habituellement affiché (ex. : À partir de 10 000 F, Sur devis). Si vous remplissez aussi « Prix promotionnel », ce texte sera barré sur le site et le prix promo sera mis en avant.
    */
   priceLabel?: string | null;
+  /**
+   * Remplissez uniquement en cas d’offre : sur le site, le « Prix ou mention » ci-dessus sera barré et ce texte sera affiché à côté. Laissez vide pour n’afficher qu’un seul prix ou mention, sans barré.
+   */
+  promotionalPriceLabel?: string | null;
+  /**
+   * Corps de l’article : paragraphes, listes, etc. Ce que les visiteurs lisent sur la page.
+   */
   content: {
     root: {
       type: string;
@@ -266,9 +381,21 @@ export interface Article {
     };
     [k: string]: unknown;
   };
+  /**
+   * Choisissez « Publié » uniquement quand l’article est prêt à être vu par tout le monde.
+   */
   status: 'draft' | 'published';
+  /**
+   * Date montrée sous le titre sur le site. Souvent la date de mise en ligne.
+   */
   publishedAt?: string | null;
+  /**
+   * Si vous laissez vide, le titre de l’article sera utilisé dans les résultats de recherche.
+   */
   seoTitle?: string | null;
+  /**
+   * Quelques lignes qui peuvent s’afficher sous le titre dans Google. Sinon Google choisira un extrait tout seul.
+   */
   seoDescription?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -415,6 +542,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   businessName?: T;
   brandName?: T;
   brandTagline?: T;
+  logo?: T;
   whatsapp?: T;
   email?: T;
   secondaryPhone?: T;
@@ -476,6 +604,7 @@ export interface ArticlesSelect<T extends boolean = true> {
   excerpt?: T;
   coverImage?: T;
   priceLabel?: T;
+  promotionalPriceLabel?: T;
   content?: T;
   status?: T;
   publishedAt?: T;

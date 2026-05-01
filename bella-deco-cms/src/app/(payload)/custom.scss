@@ -1,0 +1,12 @@
+@layer payload {
+  /* Liste collections : « Supprimer » dans la barre de sélection (haut à droite) */
+  .list-selection__button.delete-documents__toggle {
+    color: #f87171 !important;
+    text-decoration-color: #f87171;
+  }
+
+  .list-selection__button.delete-documents__toggle:hover {
+    color: #ef4444 !important;
+    text-decoration-color: #ef4444;
+  }
+}

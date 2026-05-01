@@ -104,5 +104,10 @@ export function mapArticles(docs) {
     coverImage: mediaUrlFromRelation(article.coverImage, "/assets/banner.jpg"),
     publishedAt: article.publishedAt || article.createdAt,
     content: article.content,
+    priceLabel: typeof article.priceLabel === "string" ? article.priceLabel.trim() : "",
+    promotionalPriceLabel:
+      typeof article.promotionalPriceLabel === "string"
+        ? article.promotionalPriceLabel.trim()
+        : "",
   }));
 }
