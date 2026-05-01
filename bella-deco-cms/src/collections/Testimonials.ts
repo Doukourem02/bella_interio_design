@@ -10,6 +10,7 @@ export const Testimonials: CollectionConfig = {
     useAsTitle: 'name',
     defaultColumns: ['name', 'rating', 'order', 'isActive'],
     group: 'Contenu',
+    description: 'Avis clients affichés sur la page d’accueil.',
   },
   access: {
     read: () => true,
@@ -19,12 +20,19 @@ export const Testimonials: CollectionConfig = {
       name: 'name',
       type: 'text',
       required: true,
-      label: 'Nom affiché',
+      label: 'Nom ou prénom affiché',
+      admin: {
+        description:
+          'Comme vous souhaitez qu’il apparaisse sur le site (prénom seul, initiales, ou « Famille D. » par exemple).',
+      },
     },
     {
       name: 'role',
       type: 'text',
-      label: 'Contexte',
+      label: 'Sous-titre ou type de projet',
+      admin: {
+        description: 'Ex. : Rénovation salon, Couleurs chambre.',
+      },
     },
     {
       name: 'rating',
@@ -33,32 +41,45 @@ export const Testimonials: CollectionConfig = {
       max: 5,
       defaultValue: 5,
       required: true,
-      label: 'Note',
+      label: 'Note sur 5',
     },
     {
       name: 'text',
       type: 'textarea',
       required: true,
-      label: 'Texte',
+      label: 'Message ou citation',
+      admin: {
+        description:
+          'Le témoignage tel qu’il doit être lu par les visiteurs.',
+      },
     },
     {
       name: 'avatar',
-      type: 'relationship',
+      type: 'upload',
       relationTo: 'media',
-      label: 'Photo (optionnelle)',
+      label: 'Photo de la personne (facultatif)',
+      admin: {
+        description: 'Portrait ou image libre de droits si vous en avez une.',
+      },
     },
     {
       name: 'order',
       type: 'number',
       defaultValue: 0,
       required: true,
-      label: "Ordre d'affichage",
+      label: 'Ordre sur la page',
+      admin: {
+        description: 'Les petits nombres apparaissent en premier.',
+      },
     },
     {
       name: 'isActive',
       type: 'checkbox',
       defaultValue: true,
-      label: 'Actif',
+      label: 'Afficher sur le site',
+      admin: {
+        description: 'Décochez pour masquer ce témoignage sans le supprimer.',
+      },
     },
   ],
 }

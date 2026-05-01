@@ -3,12 +3,14 @@ import type { CollectionConfig } from 'payload'
 export const SiteSettings: CollectionConfig = {
   slug: 'siteSettings',
   labels: {
-    singular: 'Paramètre du site',
-    plural: 'Paramètres du site',
+    singular: 'Infos générales du site',
+    plural: 'Infos générales du site',
   },
   admin: {
     useAsTitle: 'businessName',
     group: 'Contenu',
+    description:
+      'Coordonnées et marque affichées sur tout le site (en-tête, pied de page, boutons d’appel).',
   },
   access: {
     read: () => true,
@@ -19,17 +21,29 @@ export const SiteSettings: CollectionConfig = {
       type: 'text',
       required: true,
       label: 'Nom complet de la marque',
+      admin: {
+        description:
+          'Nom officiel affiché sur la page d’accueil et dans le pied de page (ex. Bellarose création imagination).',
+      },
     },
     {
       name: 'brandName',
       type: 'text',
       required: true,
       label: 'Nom court',
+      admin: {
+        description:
+          'Mot ou courte signature dans le menu du haut (ex. Bellarose).',
+      },
     },
     {
       name: 'brandTagline',
       type: 'text',
-      label: 'Tagline',
+      label: 'Phrase d’accroche sous le nom',
+      admin: {
+        description:
+          'Petite ligne sous le nom dans le menu (souvent en majuscules discrètes).',
+      },
     },
     {
       name: 'logo',
@@ -38,7 +52,7 @@ export const SiteSettings: CollectionConfig = {
       label: 'Logo du site',
       admin: {
         description:
-          'Optionnel. PNG ou SVG avec fond transparent recommandé. Sans logo, le nom court et la tagline restent affichés en texte.',
+          'Facultatif. Image du logo (PNG ou SVG, fond transparent si possible). Sinon le site affiche le nom en texte.',
       },
     },
     {
@@ -46,27 +60,47 @@ export const SiteSettings: CollectionConfig = {
       type: 'text',
       required: true,
       label: 'Numéro WhatsApp',
+      admin: {
+        description:
+          'Numéro utilisé pour le bouton « Appeler » et les contacts (indicatif inclus si besoin).',
+      },
     },
     {
       name: 'email',
       type: 'email',
       required: true,
       label: 'Email principal',
+      admin: {
+        description:
+          'Adresse affichée et utilisée pour le lien « Envoyer un email » sur le site.',
+      },
     },
     {
       name: 'secondaryPhone',
       type: 'text',
       label: 'Téléphone secondaire',
+      admin: {
+        description:
+          'Autre numéro affiché dans le pied de page (facultatif).',
+      },
     },
     {
       name: 'facebookUrl',
       type: 'text',
-      label: 'URL Facebook',
+      label: 'Lien page Facebook',
+      admin: {
+        description:
+          'Adresse complète de la page, qui commence par https://',
+      },
     },
     {
       name: 'instagramUrl',
       type: 'text',
-      label: 'URL Instagram',
+      label: 'Lien page Instagram',
+      admin: {
+        description:
+          'Adresse complète du profil ou de la page, qui commence par https://',
+      },
     },
   ],
 }

@@ -35,7 +35,7 @@ export default async function HomePage() {
               rel="noreferrer"
               target="_blank"
             >
-              Documentation Payload
+              Aide Payload (site officiel, en anglais)
             </a>
           </div>
         </div>

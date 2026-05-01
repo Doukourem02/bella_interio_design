@@ -3,13 +3,15 @@ import type { CollectionConfig } from 'payload'
 export const Articles: CollectionConfig = {
   slug: 'articles',
   labels: {
-    singular: 'Article',
-    plural: 'Articles',
+    singular: 'Article de blog',
+    plural: 'Articles (page Conseils)',
   },
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'status', 'publishedAt'],
     group: 'Contenu',
+    description:
+      'Articles du blog « Conseils » sur le site. Enregistrez en « Publié » pour qu’ils apparaissent en ligne.',
   },
   access: {
     read: () => true,
@@ -19,19 +21,31 @@ export const Articles: CollectionConfig = {
       name: 'title',
       type: 'text',
       required: true,
-      label: 'Titre',
+      label: 'Titre affiché sur le site',
+      admin: {
+        description:
+          'Grand titre que les visiteurs lisent en haut de l’article.',
+      },
     },
     {
       name: 'slug',
       type: 'text',
       required: true,
       unique: true,
-      label: 'Slug (URL)',
+      label: 'Fin du lien web de l’article',
+      admin: {
+        description:
+          'Texte court sans espaces, idéalement avec des tirets (ex. : conseils-couleur-salon). Il apparaît dans l’adresse après /conseils/… Ce n’est pas le titre visible sur la page.',
+      },
     },
     {
       name: 'excerpt',
       type: 'textarea',
-      label: 'Extrait',
+      label: 'Résumé court',
+      admin: {
+        description:
+          'Quelques lignes sous le titre sur la liste des articles et pour les aperçus.',
+      },
     },
     {
       name: 'coverImage',
@@ -40,22 +54,27 @@ export const Articles: CollectionConfig = {
       label: 'Image de couverture',
       admin: {
         description:
-          'Glissez-déposez un fichier ici ou choisissez dans la bibliothèque — pas besoin de passer par Média avant.',
+          'Envoyez une nouvelle image ou reprenez une image déjà enregistrée sous Photos et fichiers.',
       },
     },
     {
       name: 'priceLabel',
       type: 'text',
-      label: 'Prix (optionnel)',
+      label: 'Prix ou mention (facultatif)',
       admin: {
-        description: 'Utile si vous publiez une ressource ou un produit.',
+        description:
+          'Texte libre si l’article concerne une offre payante (ex. : À partir de 10 000 F, Sur devis). Laissez vide si ce n’est pas le cas.',
       },
     },
     {
       name: 'content',
       type: 'richText',
       required: true,
-      label: 'Contenu',
+      label: 'Texte de l’article',
+      admin: {
+        description:
+          'Corps de l’article : paragraphes, listes, etc. Ce que les visiteurs lisent sur la page.',
+      },
     },
     {
       name: 'status',
@@ -63,22 +82,28 @@ export const Articles: CollectionConfig = {
       defaultValue: 'draft',
       options: [
         {
-          label: 'Brouillon',
+          label: 'Brouillon (pas visible sur le site)',
           value: 'draft',
         },
         {
-          label: 'Publié',
+          label: 'Publié (visible sur le site)',
           value: 'published',
         },
       ],
       required: true,
-      label: 'Statut',
+      label: 'Visibilité',
+      admin: {
+        description:
+          'Choisissez « Publié » uniquement quand l’article est prêt à être vu par tout le monde.',
+      },
     },
     {
       name: 'publishedAt',
       type: 'date',
-      label: 'Date de publication',
+      label: 'Date et heure affichées',
       admin: {
+        description:
+          'Date montrée sous le titre sur le site. Souvent la date de mise en ligne.',
         date: {
           pickerAppearance: 'dayAndTime',
         },
@@ -87,12 +112,20 @@ export const Articles: CollectionConfig = {
     {
       name: 'seoTitle',
       type: 'text',
-      label: 'Titre SEO',
+      label: 'Titre pour Google (facultatif)',
+      admin: {
+        description:
+          'Si vous laissez vide, le titre de l’article sera utilisé dans les résultats de recherche.',
+      },
     },
     {
       name: 'seoDescription',
       type: 'textarea',
-      label: 'Description SEO',
+      label: 'Court résumé pour Google (facultatif)',
+      admin: {
+        description:
+          'Quelques lignes qui peuvent s’afficher sous le titre dans Google. Sinon Google choisira un extrait tout seul.',
+      },
     },
   ],
 }

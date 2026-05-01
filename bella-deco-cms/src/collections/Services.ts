@@ -3,13 +3,14 @@ import type { CollectionConfig } from 'payload'
 export const Services: CollectionConfig = {
   slug: 'services',
   labels: {
-    singular: 'Service',
-    plural: 'Services',
+    singular: 'Prestation',
+    plural: 'Prestations',
   },
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'label', 'order', 'isActive'],
     group: 'Contenu',
+    description: 'Cartes « ce que nous faisons » sur la page d’accueil.',
   },
   access: {
     read: () => true,
@@ -19,35 +20,49 @@ export const Services: CollectionConfig = {
       name: 'title',
       type: 'text',
       required: true,
-      label: 'Titre',
+      label: 'Titre de la prestation',
+      admin: {
+        description:
+          'Nom principal sous la photo sur la page d’accueil.',
+      },
     },
     {
       name: 'label',
       type: 'text',
-      label: 'Label',
+      label: 'Petit mot sur la photo',
+      admin: {
+        description:
+          'Court texte affiché en badge sur l’image (ex. : Espaces de vie, Harmonie).',
+      },
     },
     {
       name: 'description',
       type: 'textarea',
       required: true,
-      label: 'Description',
+      label: 'Texte descriptif',
+      admin: {
+        description:
+          'Expliquez ce que vous proposez, en quelques phrases claires pour les visiteurs.',
+      },
     },
     {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
       required: true,
-      label: 'Image',
+      label: 'Photo illustrant la prestation',
       admin: {
-        description: 'Upload direct ou sélection dans la bibliothèque.',
+        description:
+          'Envoyez une nouvelle photo ou choisissez-en une déjà enregistrée.',
       },
     },
     {
       name: 'priceLabel',
       type: 'text',
-      label: 'Prix / mention tarifaire',
+      label: 'Tarif ou formulation',
       admin: {
-        description: 'Exemple: "Sur devis", "A partir de 25 000 FCFA"',
+        description:
+          'Texte court affiché sous la description (ex. : Sur devis, À partir de 25 000 FCFA). Laissez vide si vous préférez ne rien montrer.',
       },
     },
     {
@@ -55,13 +70,19 @@ export const Services: CollectionConfig = {
       type: 'number',
       defaultValue: 0,
       required: true,
-      label: "Ordre d'affichage",
+      label: 'Ordre sur la page',
+      admin: {
+        description: 'Les petits nombres apparaissent en premier.',
+      },
     },
     {
       name: 'isActive',
       type: 'checkbox',
       defaultValue: true,
-      label: 'Actif',
+      label: 'Afficher sur le site',
+      admin: {
+        description: 'Décochez pour masquer cette prestation sans la supprimer.',
+      },
     },
   ],
 }
