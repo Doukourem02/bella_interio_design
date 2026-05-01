@@ -7,7 +7,12 @@ function normalizePublicURL(value: string | undefined): string {
 }
 
 export default function BackToSiteLink() {
-  const siteURL = normalizePublicURL(process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_SERVER_URL)
+  const siteURL = normalizePublicURL(
+    process.env.WEBSITE_URL ||
+      process.env.NEXT_PUBLIC_WEBSITE_URL ||
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      'https://bella-interio-design.vercel.app',
+  )
   if (!siteURL) return null
 
   return (
