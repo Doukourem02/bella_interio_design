@@ -9,4 +9,23 @@
     color: #ef4444 !important;
     text-decoration-color: #ef4444;
   }
+
+  /* Si la route /admin/logout s'ouvre, ne pas afficher le toast "déconnecté". */
+  body:has(.logout) [data-sonner-toaster],
+  body:has(.logout) .payload-toast-container {
+    display: none !important;
+  }
+
+  /* Remplacer visuellement "DÉCONNEXION..." par "CHARGEMENT...". */
+  body:has(.logout) .loading-overlay__loading-text {
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+
+  body:has(.logout) .loading-overlay__loading-text::after {
+    content: 'CHARGEMENT...';
+    font-size: 1.25rem;
+    letter-spacing: 0.25em;
+    line-height: 1.4;
+  }
 }

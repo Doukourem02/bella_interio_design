@@ -34,6 +34,12 @@ export default buildConfig({
     meta: {
       titleSuffix: '— Gestion Bellarose',
     },
+    components: {
+      afterNavLinks: ['@/components/admin/BackToSiteLink'],
+      graphics: {
+        Logo: '@/components/admin/AdminLogo',
+      },
+    },
     importMap: {
       baseDir: path.resolve(dirname),
     },
