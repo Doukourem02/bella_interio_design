@@ -9,6 +9,7 @@ export default function AdminLogo() {
         flexDirection: 'column',
         gap: '0.25rem',
         lineHeight: 1.1,
+        marginTop: '-1.1rem',
       }}
     >
       <span
@@ -24,10 +25,10 @@ export default function AdminLogo() {
       <span
         style={{
           color: 'var(--theme-text)',
-          fontSize: '0.95rem',
+          fontSize: '1.08rem',
           fontWeight: 600,
-          letterSpacing: '0.28em',
-          opacity: 0.92,
+          letterSpacing: '0.24em',
+          opacity: 0.95,
           textTransform: 'uppercase',
         }}
       >
@@ -36,9 +37,9 @@ export default function AdminLogo() {
       <span
         style={{
           color: 'var(--theme-text)',
-          fontSize: '0.88rem',
+          fontSize: '1rem',
           letterSpacing: '0.02em',
-          opacity: 0.88,
+          opacity: 0.92,
           textAlign: 'center',
         }}
       >
