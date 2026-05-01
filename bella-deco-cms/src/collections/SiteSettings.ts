@@ -7,13 +7,29 @@ export const SiteSettings: CollectionConfig = {
     plural: 'Infos générales du site',
   },
   admin: {
-    useAsTitle: 'businessName',
+    useAsTitle: 'brandName',
+    defaultColumns: ['brandName', 'businessName', 'updatedAt'],
     group: 'Contenu',
     description:
-      'Coordonnées et marque affichées sur tout le site (en-tête, pied de page, boutons d’appel).',
+      'Coordonnées et marque affichées sur tout le site (en-tête, pied de page, boutons d’appel). Une seule fiche suffit : ouvrez-la et modifiez-la plutôt que d’en créer plusieurs.',
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    beforeValidate: [
+      ({ data }) => {
+        if (!data || typeof data !== 'object') return data
+        const brand =
+          typeof data.brandName === 'string' ? data.brandName.trim() : ''
+        const business =
+          typeof data.businessName === 'string' ? data.businessName.trim() : ''
+        if (!business && brand) {
+          return { ...data, businessName: brand }
+        }
+        return data
+      },
+    ],
   },
   fields: [
     {

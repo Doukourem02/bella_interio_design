@@ -8,6 +8,8 @@ export const Media: CollectionConfig = {
   },
   admin: {
     group: 'Fichiers et images',
+    useAsTitle: 'alt',
+    defaultColumns: ['alt', 'updatedAt'],
     description:
       'Toutes les images envoyées ici sont rangées au même endroit pour les réutiliser. Vous pouvez aussi envoyer une image directement depuis un article, une prestation ou la galerie.',
   },

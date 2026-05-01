@@ -16,6 +16,42 @@ export const Articles: CollectionConfig = {
   access: {
     read: () => true,
   },
+  hooks: {
+    beforeValidate: [
+      ({ data, operation }) => {
+        if (operation === 'delete' || !data || typeof data !== 'object') return data
+        const title = typeof data.title === 'string' ? data.title.trim() : ''
+        if (title) return data
+        const slug = typeof data.slug === 'string' ? data.slug.trim() : ''
+        if (slug) {
+          const fromSlug = slug.replace(/-/g, ' ')
+          const pretty =
+            fromSlug.length > 0
+              ? fromSlug.charAt(0).toUpperCase() + fromSlug.slice(1)
+              : ''
+          if (pretty) return { ...data, title: pretty }
+        }
+        return { ...data, title: 'Article sans titre' }
+      },
+    ],
+    afterRead: [
+      ({ doc }) => {
+        if (!doc || typeof doc !== 'object') return doc
+        const title = typeof doc.title === 'string' ? doc.title.trim() : ''
+        if (title) return doc
+        const slug = typeof doc.slug === 'string' ? doc.slug.trim() : ''
+        if (slug) {
+          const fromSlug = slug.replace(/-/g, ' ')
+          const pretty =
+            fromSlug.length > 0
+              ? fromSlug.charAt(0).toUpperCase() + fromSlug.slice(1)
+              : ''
+          if (pretty) return { ...doc, title: pretty }
+        }
+        return { ...doc, title: 'Article sans titre' }
+      },
+    ],
+  },
   fields: [
     {
       name: 'title',

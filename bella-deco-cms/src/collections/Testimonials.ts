@@ -15,6 +15,28 @@ export const Testimonials: CollectionConfig = {
   access: {
     read: () => true,
   },
+  hooks: {
+    beforeValidate: [
+      ({ data, operation }) => {
+        if (operation === 'delete' || !data || typeof data !== 'object') return data
+        const name = typeof data.name === 'string' ? data.name.trim() : ''
+        if (name) return data
+        const role = typeof data.role === 'string' ? data.role.trim() : ''
+        if (role) return { ...data, name: role }
+        return { ...data, name: 'Témoignage client' }
+      },
+    ],
+    afterRead: [
+      ({ doc }) => {
+        if (!doc || typeof doc !== 'object') return doc
+        const name = typeof doc.name === 'string' ? doc.name.trim() : ''
+        if (name) return doc
+        const role = typeof doc.role === 'string' ? doc.role.trim() : ''
+        if (role) return { ...doc, name: role }
+        return { ...doc, name: 'Témoignage client' }
+      },
+    ],
+  },
   fields: [
     {
       name: 'name',

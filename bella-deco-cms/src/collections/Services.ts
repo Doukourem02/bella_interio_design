@@ -15,6 +15,36 @@ export const Services: CollectionConfig = {
   access: {
     read: () => true,
   },
+  hooks: {
+    beforeValidate: [
+      ({ data, operation }) => {
+        if (operation === 'delete' || !data || typeof data !== 'object') return data
+        const title = typeof data.title === 'string' ? data.title.trim() : ''
+        if (title) return data
+        const label = typeof data.label === 'string' ? data.label.trim() : ''
+        if (label) return { ...data, title: label }
+        const order = typeof data.order === 'number' ? data.order : ''
+        return {
+          ...data,
+          title: order !== '' ? `Prestation (ordre ${order})` : 'Prestation à nommer',
+        }
+      },
+    ],
+    afterRead: [
+      ({ doc }) => {
+        if (!doc || typeof doc !== 'object') return doc
+        const title = typeof doc.title === 'string' ? doc.title.trim() : ''
+        if (title) return doc
+        const label = typeof doc.label === 'string' ? doc.label.trim() : ''
+        if (label) return { ...doc, title: label }
+        const order = typeof doc.order === 'number' ? doc.order : ''
+        return {
+          ...doc,
+          title: order !== '' ? `Prestation (ordre ${order})` : 'Prestation à nommer',
+        }
+      },
+    ],
+  },
   fields: [
     {
       name: 'title',

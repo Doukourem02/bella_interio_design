@@ -16,6 +16,34 @@ export const LearningGallery: CollectionConfig = {
   access: {
     read: () => true,
   },
+  hooks: {
+    beforeValidate: [
+      ({ data, operation }) => {
+        if (operation === 'delete' || !data || typeof data !== 'object') return data
+        const title = typeof data.title === 'string' ? data.title.trim() : ''
+        if (title) return data
+        const caption = typeof data.caption === 'string' ? data.caption.trim() : ''
+        if (caption) {
+          const short = caption.length > 70 ? `${caption.slice(0, 70)}…` : caption
+          return { ...data, title: short }
+        }
+        return { ...data, title: 'Diapositive carrousel' }
+      },
+    ],
+    afterRead: [
+      ({ doc }) => {
+        if (!doc || typeof doc !== 'object') return doc
+        const title = typeof doc.title === 'string' ? doc.title.trim() : ''
+        if (title) return doc
+        const caption = typeof doc.caption === 'string' ? doc.caption.trim() : ''
+        if (caption) {
+          const short = caption.length > 70 ? `${caption.slice(0, 70)}…` : caption
+          return { ...doc, title: short }
+        }
+        return { ...doc, title: 'Diapositive carrousel' }
+      },
+    ],
+  },
   fields: [
     {
       name: 'title',
