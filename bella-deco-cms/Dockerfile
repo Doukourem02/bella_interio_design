@@ -63,6 +63,9 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# Après la copie standalone : dossier d’upload Payload (writable par nextjs)
+RUN mkdir -p media && chown nextjs:nodejs media
+
 USER nextjs
 
 EXPOSE 3000

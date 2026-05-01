@@ -1,4 +1,8 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
 import type { CollectionConfig } from 'payload'
+
+const mediaDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../media')
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -11,7 +15,7 @@ export const Media: CollectionConfig = {
     useAsTitle: 'alt',
     defaultColumns: ['alt', 'updatedAt'],
     description:
-      'Toutes les images envoyées ici sont rangées au même endroit pour les réutiliser. Vous pouvez aussi envoyer une image directement depuis un article, une prestation ou la galerie.',
+      'Images uniquement (JPG, PNG, GIF, WebP, SVG…). Les vidéos (MP4, etc.) ne sont pas acceptées ici : elles provoquent une erreur à l’enregistrement. Les fichiers sont enregistrés sur le serveur dans le dossier « media » (pensez à un volume disque en production si besoin).',
   },
   access: {
     read: () => true,
@@ -28,5 +32,8 @@ export const Media: CollectionConfig = {
       },
     },
   ],
-  upload: true,
+  upload: {
+    staticDir: mediaDir,
+    mimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'image/avif'],
+  },
 }

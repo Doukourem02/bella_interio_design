@@ -17,7 +17,18 @@ import { Articles } from './collections/Articles'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+/** URL publique du CMS (obligatoire en prod pour les liens des fichiers). Ex. https://xxx.up.railway.app */
+function serverURLFromEnv(): string | undefined {
+  const explicit =
+    process.env.PAYLOAD_PUBLIC_SERVER_URL || process.env.SERVER_URL || process.env.NEXT_PUBLIC_SERVER_URL
+  if (explicit) return explicit.replace(/\/$/, '')
+  const railway = process.env.RAILWAY_PUBLIC_DOMAIN
+  if (railway) return railway.startsWith('http') ? railway.replace(/\/$/, '') : `https://${railway}`
+  return undefined
+}
+
 export default buildConfig({
+  serverURL: serverURLFromEnv(),
   admin: {
     user: Users.slug,
     meta: {
