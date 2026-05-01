@@ -7,7 +7,7 @@ export default function AdminLogo() {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        gap: '0.15rem',
+        gap: '0.25rem',
         lineHeight: 1.1,
       }}
     >
@@ -30,7 +30,18 @@ export default function AdminLogo() {
           textTransform: 'uppercase',
         }}
       >
-        création imagination
+        admin panel
+      </span>
+      <span
+        style={{
+          color: 'var(--theme-text)',
+          fontSize: '0.7rem',
+          letterSpacing: '0.04em',
+          opacity: 0.7,
+          textAlign: 'center',
+        }}
+      >
+        Espace reserve aux administrateurs uniquement
       </span>
     </div>
   )
