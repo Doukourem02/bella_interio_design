@@ -2,13 +2,27 @@ import { siteSettings as fallbackSiteSettings } from "@/app/data/siteSettings";
 import { services as fallbackServices } from "@/app/data/services";
 import { testimonials as fallbackTestimonials } from "@/app/data/testimonials";
 import { learningGallerySlides as fallbackGallery } from "@/app/data/learningGallery";
+import { CMS_BASE_URL } from "@/app/lib/payloadClient";
 
 const fallbackServiceImages = fallbackServices.map((service) => service.image);
+
+/** Payload often returns `/api/media/...`; Next/Image must load from the CMS host, not Vercel. */
+function resolveCmsMediaUrl(url) {
+  if (!url || typeof url !== "string") return url;
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  if (url.startsWith("/assets/")) return url;
+  if (url.startsWith("/")) {
+    const base = CMS_BASE_URL.replace(/\/$/, "");
+    return `${base}${url}`;
+  }
+  return url;
+}
 
 function mediaUrlFromRelation(media, fallbackUrl = "/assets/banner.jpg") {
   if (!media) return fallbackUrl;
   if (typeof media === "string") return fallbackUrl;
-  return media.url || fallbackUrl;
+  const raw = media.url || fallbackUrl;
+  return resolveCmsMediaUrl(raw) || fallbackUrl;
 }
 
 export function mapSiteSettings(settings) {

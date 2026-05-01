@@ -4,10 +4,10 @@ const Footer = ({ siteSettings, services = [] }) => {
   const currentYear = new Date().getFullYear();
 
   const links = [
-    { name: "Accueil", href: "#accueil" },
-    { name: "Prestations", href: "#prestations" },
-    { name: "Approche", href: "#approche" },
-    { name: "Contact", href: "#contact" },
+    { name: "Accueil", href: "/#accueil" },
+    { name: "Prestations", href: "/#prestations" },
+    { name: "Approche", href: "/#approche" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (

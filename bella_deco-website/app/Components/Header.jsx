@@ -1,37 +1,56 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Accueil", href: "#accueil" },
-  { name: "Prestations", href: "#prestations" },
-  { name: "Approche", href: "#approche" },
-  { name: "Témoignages", href: "#temoignages" },
+  { name: "Accueil", href: "/#accueil" },
+  { name: "Prestations", href: "/#prestations" },
+  { name: "Approche", href: "/#approche" },
+  { name: "Témoignages", href: "/#temoignages" },
   { name: "Conseils", href: "/conseils" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Header({ siteSettings }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
-    <header className="absolute top-0 z-50 w-full">
+    <header
+      className={cn(
+        "top-0 z-50 w-full",
+        isHome
+          ? "absolute"
+          : "sticky border-b border-slate-200/90 bg-white/95 shadow-sm backdrop-blur-sm supports-[backdrop-filter]:bg-white/90"
+      )}
+    >
       <div className="container mx-auto">
         <nav
           aria-label="Navigation principale"
           className="flex items-center justify-between px-4 py-6 lg:px-8"
         >
           <div className="flex lg:flex-1">
-            <Link href="#accueil" className="text-white">
+            <Link
+              href="/"
+              className={cn(isHome ? "text-white" : "text-slate-900")}
+            >
               <span className="block text-2xl font-semibold leading-none tracking-wide">
                 {siteSettings.brandName}
               </span>
-              <span className="text-xs uppercase tracking-[0.35em] text-white/80">
+              <span
+                className={cn(
+                  "text-xs uppercase tracking-[0.35em]",
+                  isHome ? "text-white/80" : "text-slate-500"
+                )}
+              >
                 {siteSettings.brandTagline}
               </span>
             </Link>
@@ -41,7 +60,10 @@ export default function Header({ siteSettings }) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              className={cn(
+                "-m-2.5 inline-flex items-center justify-center rounded-md p-2.5",
+                isHome ? "text-white" : "text-slate-800"
+              )}
               aria-label="Ouvrir le menu"
             >
               <Bars3Icon aria-hidden="true" className="size-8" />
@@ -53,7 +75,12 @@ export default function Header({ siteSettings }) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="group relative text-base tracking-wide text-white hover:text-primary transition-all duration-300"
+                className={cn(
+                  "group relative text-base tracking-wide transition-all duration-300",
+                  isHome
+                    ? "text-white hover:text-primary"
+                    : "text-slate-700 hover:text-primary"
+                )}
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -80,7 +107,7 @@ export default function Header({ siteSettings }) {
         <div className="fixed inset-0 z-50 bg-slate-950/40" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-950 p-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
-            <Link href="#accueil" className="text-white">
+            <Link href="/" className="text-white">
               <span className="block text-2xl font-semibold leading-none">
                 {siteSettings.brandName}
               </span>
