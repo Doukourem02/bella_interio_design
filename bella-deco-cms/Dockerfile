@@ -45,6 +45,8 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+# Chemin fixe des fichiers média Payload (aligné avec Media.ts sur Railway)
+ENV PAYLOAD_UPLOAD_DIR=/app/media
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 

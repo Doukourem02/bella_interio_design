@@ -1,8 +1,10 @@
 import path from 'path'
-import { fileURLToPath } from 'url'
 import type { CollectionConfig } from 'payload'
 
-const mediaDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../media')
+// Forcé en prod Docker via ENV (Dockerfile). En local : ./media à la racine du projet si la variable est absente.
+const mediaDir = path.resolve(
+  process.env.PAYLOAD_UPLOAD_DIR || path.join(process.cwd(), 'media'),
+)
 
 export const Media: CollectionConfig = {
   slug: 'media',
