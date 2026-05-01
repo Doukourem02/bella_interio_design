@@ -49,6 +49,22 @@ C'est l'endroit ou on remplit les champs : titre, image, description, etc.
 
 Toujours cliquer sur **Sauvegarder** apres modification.
 
+### Bouton "Voir le site web" (retour rapide)
+
+Ce bouton sert a revenir rapidement sur le site public pour verifier les changements.
+
+Ou le trouver exactement :
+
+1. Regarder la **barre laterale gauche** (menu principal).
+2. Descendre **tout en bas de ce menu**.
+3. Vous verrez un bouton/lien : **Voir le site web**.
+
+Si vous ne le voyez pas :
+
+- faites defiler la barre laterale vers le bas;
+- agrandissez la fenetre du navigateur;
+- verifiez que vous etes bien connectee dans Bella Rose Admin Panel.
+
 ## 4) Cas concret : gerer le carrousel (ajouter / supprimer)
 
 ### Ajouter une image au carrousel
@@ -99,6 +115,7 @@ Bibliotheque globale des images.
 ## 7) Verification apres chaque modification
 
 1. Sauvegarder dans Bella Rose Admin Panel.
-2. Cliquer **Voir le site web** (raccourci dans l'admin).
-3. Controler la page concernee.
-4. Si besoin : revenir dans Bella Rose Admin Panel, corriger, sauvegarder.
+2. Aller dans la barre laterale gauche.
+3. Cliquer sur **Voir le site web** (en bas du menu).
+4. Controler la page concernee sur le site public.
+5. Si besoin : revenir dans Bella Rose Admin Panel, corriger, sauvegarder.
